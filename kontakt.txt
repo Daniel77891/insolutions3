@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kontakt</title>
+    <meta name="description" content="Skontaktuj się z nami. Wyślij zapytanie za pomocą formularza kontaktowego.">
+
+    <link rel="stylesheet" href="css/kontakt.css">
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body>
+
+<header class="contact-header">
+    <a href="index.html" class="brand">TWOJA FIRMA</a>
+
+    <nav>
+        <a href="index.html">Strona główna</a>
+        <a href="kontakt.html" class="active">Kontakt</a>
+    </nav>
+</header>
+
+<section class="contact-hero">
+    <div class="hero-content">
+        <span class="eyebrow">JESTEŚMY DO TWOJEJ DYSPOZYCJI</span>
+        <h1>Porozmawiajmy.</h1>
+        <p>
+            Masz pytanie, pomysł lub potrzebujesz informacji?
+            Napisz do nas. Chętnie pomożemy.
+        </p>
+    </div>
+</section>
+
+<main class="contact-container">
+
+    <section class="contact-information">
+
+        <div class="info-card">
+            <div class="info-icon">⌖</div>
+            <h3>Nasza lokalizacja</h3>
+            <p>Adres firmy</p>
+            <span>Ulica i numer, kod pocztowy, miasto</span>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">☎</div>
+            <h3>Telefon</h3>
+            <p>+48 000 000 000</p>
+            <span>Poniedziałek – Piątek</span>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">✉</div>
+            <h3>E-mail</h3>
+            <p>kontakt@twojafirma.pl</p>
+            <span>Napisz do nas w dowolnej chwili</span>
+        </div>
+
+    </section>
+
+    <section class="contact-main">
+
+        <div class="contact-description">
+            <span class="eyebrow">FORMULARZ KONTAKTOWY</span>
+
+            <h2>W czym możemy Ci pomóc?</h2>
+
+            <p>
+                Wybierz kategorię kontaktu, uzupełnij swoje dane
+                i opisz, czego dotyczy Twoje zapytanie.
+                Twoja wiadomość trafi bezpośrednio do naszego systemu.
+            </p>
+
+            <div class="contact-note">
+                <strong>Dbamy o Twoje zapytania.</strong>
+                <p>
+                    Każda wiadomość zostaje zapisana i przekazana
+                    do odpowiedniej obsługi.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-card">
+
+            <form id="contactForm">
+
+                <div id="formMessage"
+                     class="form-message"
+                     role="status"
+                     aria-live="polite"></div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="name">Imię i nazwisko *</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Jan Kowalski"
+                            maxlength="150"
+                            autocomplete="name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Adres e-mail *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="jan@email.pl"
+                            maxlength="190"
+                            autocomplete="email"
+                            required>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="phone">Numer telefonu</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="+48 000 000 000"
+                            maxlength="30"
+                            autocomplete="tel">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Temat kontaktu *</label>
+
+                        <select id="category" name="category" required>
+                            <option value="">Wybierz kategorię</option>
+                            <option value="Oferta i wycena">Oferta i wycena</option>
+                            <option value="Produkty i usługi">Produkty i usługi</option>
+                            <option value="Współpraca biznesowa">Współpraca biznesowa</option>
+                            <option value="Zamówienia i realizacja">Zamówienia i realizacja</option>
+                            <option value="Reklamacje">Reklamacje</option>
+                            <option value="Serwis i wsparcie techniczne">Serwis i wsparcie techniczne</option>
+                            <option value="Faktury i płatności">Faktury i płatności</option>
+                            <option value="Marketing i media">Marketing i media</option>
+                            <option value="Praca i rekrutacja">Praca i rekrutacja</option>
+                            <option value="Inne">Inne</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Temat wiadomości</label>
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="Czego dotyczy Twoja wiadomość?"
+                        maxlength="200">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Treść wiadomości *</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        maxlength="10000"
+                        placeholder="Napisz kilka słów..."
+                        required></textarea>
+                </div>
+
+                <label class="privacy-checkbox">
+                    <input type="checkbox" id="consent" required>
+                    <span>
+                        Zapoznałem/am się z
+                        <a href="polityka-prywatnosci.html">
+                            polityką prywatności
+                        </a>
+                        i informacją o przetwarzaniu danych.
+                    </span>
+                </label>
+
+                <button type="submit" id="submitButton">
+                    <span>Wyślij wiadomość</span>
+                    <span class="button-arrow">→</span>
+                </button>
+
+                <p class="required-info">
+                    * Pola wymagane
+                </p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <section class="map-section">
+
+        <div class="map-heading">
+            <span class="eyebrow">LOKALIZACJA</span>
+            <h2>Znajdź nas na mapie</h2>
+            <p>Zapraszamy do naszej siedziby.</p>
+        </div>
+
+        <div id="map"></div>
+
+    </section>
+
+</main>
+
+<footer class="contact-footer">
+    <p>© <span id="year"></span> Twoja Firma. Wszelkie prawa zastrzeżone.</p>
+    <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="js/supabase.js"></script>
+<script src="js/kontakt.js"></script>
+
+</body>
+</html>

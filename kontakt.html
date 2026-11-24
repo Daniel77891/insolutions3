@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt – inSolutions</title>
+    <meta name="description" content="Skontaktuj się z nami. Wyślij zapytanie za pomocą formularza kontaktowego.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="nexo.css">
+
+    <style>
+    /* =================================================================
+       OGÓLNE STYLE I ZMIENNE
+       ================================================================= */
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: #263445;
+        background: #f7f8fa;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    :root {
+        --navy: #112946;
+        --blue: #2272b3;
+        --blue-hover: #1b5d92;
+        --light-blue: #f0f5fb;
+        --green: #4f962d;
+        --gray: #637184;
+        --border-color: #dbe2ec;
+        --white: #ffffff;
+    }
+
+    /* =================================================================
+       HEADER ORAZ MENU
+       ================================================================= */
+    header {
+        background: linear-gradient(rgba(17, 41, 70, 0.75), rgba(17, 41, 70, 0.85)), url("baner2.jpg") center/cover no-repeat;
+        min-height: 520px;
+        color: white;
+    }
+
+    .menu {
+        max-width: 1250px;
+        margin: auto;
+        padding: 25px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .menu img {
+        width: 155px;
+        height: 65px;
+        object-fit: contain;
+    }
+
+    .menu nav {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .menu nav a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: color 0.3s ease;
+    }
+
+    .menu nav a:hover,
+    .menu nav a.active {
+        color: #ffe600;
+        text-decoration: underline;
+        text-underline-offset: 6px;
+    }
+
+    /* =================================================================
+       SEKCJA HERO
+       ================================================================= */
+    .contact-hero {
+        color: white;
+        padding: 50px 20px 80px 20px;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 750px;
+        margin: auto;
+    }
+
+    .eyebrow {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        color: #b3d7ff;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .contact-hero h1 {
+        font-size: clamp(34px, 5vw, 52px);
+        margin: 10px 0;
+        line-height: 1.15;
+        font-weight: 800;
+    }
+
+    .contact-hero p {
+        color: #d6e4f0;
+        font-size: 16px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* =================================================================
+       GŁÓWNA ZAWARTOŚĆ
+       ================================================================= */
+    main {
+        max-width: 1250px;
+        margin: auto;
+        padding: 60px 30px;
+    }
+
+    .contact-information {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-bottom: 60px;
+    }
+
+    @media (max-width: 900px) {
+        .contact-information {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .info-card {
+        background: white;
+        border-radius: 14px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(17, 41, 70, 0.04);
+        border: 1px solid var(--border-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .info-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(17, 41, 70, 0.08);
+    }
+
+    .info-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: var(--light-blue);
+        color: var(--blue);
+        border-radius: 10px;
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+
+    .info-card h3 {
+        color: var(--navy);
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+
+    .info-card p {
+        margin: 0 0 4px 0;
+        font-weight: 600;
+        color: #263445;
+        font-size: 15px;
+    }
+
+    .info-card span {
+        font-size: 13px;
+        color: var(--gray);
+    }
+
+    /* =================================================================
+       SEKCJA KONTAKTOWA (OPIS + FORMULARZ)
+       ================================================================= */
+    .contact-main {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 50px;
+        align-items: start;
+    }
+
+    @media (max-width: 900px) {
+        .contact-main {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+
+    .contact-description {
+        padding-top: 10px;
+    }
+
+    .contact-description h2,
+    .contact-map h2 {
+        font-size: 32px;
+        line-height: 1.2;
+        color: var(--navy);
+        margin: 8px 0 16px 0;
+        font-weight: 700;
+    }
+
+    .contact-description > p {
+        color: var(--gray);
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .contact-note {
+        border-left: 3px solid var(--blue);
+        padding: 18px 20px;
+        margin-top: 30px;
+        background: var(--light-blue);
+        border-radius: 0 10px 10px 0;
+    }
+
+    .contact-note strong {
+        color: var(--navy);
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .contact-note p {
+        color: var(--gray);
+        font-size: 13px;
+        margin-bottom: 0;
+        line-height: 1.5;
+    }
+
+    /* =================================================================
+       FORMULARZ
+       ================================================================= */
+    .form-card {
+        background: white;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(17, 41, 70, 0.06);
+        border: 1px solid var(--border-color);
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    @media (max-width: 600px) {
+        .form-row {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--navy);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px 16px;
+        font-family: inherit;
+        font-size: 14px;
+        color: #263445;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        background: #fafbfd;
+        transition: all 0.3s ease;
+    }
+
+    .form-group input:hover,
+    .form-group select:hover,
+    .form-group textarea:hover {
+        border-color: #b0c2d4;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--blue);
+        background: #fff;
+        box-shadow: 0 0 0 4px rgba(34, 114, 179, 0.12);
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .privacy-checkbox {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 13px;
+        color: var(--gray);
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .privacy-checkbox input {
+        margin-top: 3px;
+        width: 16px;
+        height: 16px;
+        accent-color: var(--blue);
+        cursor: pointer;
+    }
+
+    .privacy-checkbox a {
+        color: var(--blue);
+        text-decoration: underline;
+    }
+
+    #submitButton {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 24px;
+        margin-top: 24px;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        background: var(--navy);
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    #submitButton:hover {
+        background: var(--blue);
+        transform: translateY(-1px);
+    }
+
+    #submitButton:disabled {
+        opacity: 0.6;
+        cursor: wait;
+        transform: none;
+    }
+
+    .button-arrow {
+        font-size: 18px;
+        transition: transform 0.3s ease;
+    }
+
+    #submitButton:hover .button-arrow {
+        transform: translateX(4px);
+    }
+
+    .required-info {
+        color: var(--gray);
+        font-size: 12px;
+        margin-top: 12px;
+        text-align: right;
+    }
+
+    .form-message {
+        display: none;
+        padding: 14px 16px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .form-message.success {
+        display: block;
+        color: #155724;
+        background: #d4edda;
+        border: 1px solid #c3e6cb;
+    }
+
+    .form-message.error {
+        display: block;
+        color: #721c24;
+        background: #f8d7da;
+        border: 1px solid #f5c6cb;
+    }
+
+    /* =================================================================
+       MAPA I PRZEŁĄCZNIK JĘZYKÓW
+       ================================================================= */
+    .contact-map {
+        margin-top: 70px;
+    }
+
+    .contact-map iframe {
+        border-radius: 16px;
+        border: 1px solid var(--border-color) !important;
+        box-shadow: 0 4px 20px rgba(17, 41, 70, 0.04);
+    }
+
+    .language-switcher {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .language-switcher button {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: white;
+        padding: 6px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 11px;
+        font-weight: 700;
+        transition: all 0.3s ease;
+    }
+
+    .language-switcher button:hover {
+        background: var(--blue);
+        border-color: var(--blue);
+    }
+
+    #google_translate_element {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+    /* =================================================================
+       STOPKA
+       ================================================================= */
+    .contact-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 40px;
+        background: var(--navy);
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 13px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .contact-footer a {
+        color: #9ec5fe;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .contact-footer a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
+    /* =================================================================
+       PANEL ADMINISTRATORA
+       ================================================================= */
+    .admin-panel {
+        max-width: 1250px;
+        margin: 50px auto;
+        padding: 40px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(17, 41, 70, 0.08);
+        border: 1px solid var(--border-color);
+    }
+
+    .admin-message {
+        background: #fafbfd;
+        border: 1px solid var(--border-color);
+        padding: 24px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+    }
+    </style>
+</head>
+<body>
+    <nav class="breadcrumbs">
+    <a href="index.html">Strona główna</a>
+    <span>›</span>
+    <strong>Oferta</strong>
+</nav>
+
+<header>
+    <div class="menu">
+        <a href="index.html" class="logo" aria-label="inSolutions – strona główna">
+            <img src="logo.svg" alt="inSolutions">
+        </a>
+        <nav>
+           
+            <a href="oferta.html">OFERTA</a>
+            <a href="wdrozenia.html">WDROŻENIA</a>
+            <a href="https://www.insklep.pl/" target="_blank" rel="noopener">INSKLEP</a>
+            <a href="kontakt.html">KONTAKT</a>
+
+            <div class="language-switcher">
+                <button onclick="changeLanguage('pl')">PL</button>
+                <button onclick="changeLanguage('en')">EN</button>
+                <button onclick="changeLanguage('de')">DE</button>
+            </div>
+        </nav>
+    </div>
+
+    <div class="contact-hero">
+        <div class="hero-content">
+            <span class="eyebrow">Jesteśmy do Twojej dyspozycji</span>
+            <h1>Porozmawiajmy o Twoim projekcie.</h1>
+            <p>
+                Masz pytanie, pomysł lub potrzebujesz dedykowanych rozwiązań? 
+                Napisz do nas – odpowiemy najszybciej jak to możliwe.
+            </p>
+        </div>
+    </div>
+
+</header>
+
+<div id="moja-wyszukiwarka">
+
+    <button type="button" id="moja-lupa" aria-label="Otwórz wyszukiwarkę">
+        🔍
+    </button>
+
+    <div id="moje-okno-wyszukiwania">
+
+        <input
+            type="search"
+            id="moje-pole"
+            placeholder="Czego szukasz?"
+            aria-label="Wpisz szukaną frazę"
+        >
+
+        <div id="moje-wyniki" aria-live="polite"></div>
+
+    </div>
+
+</div>
+
+<main>
+    <section class="contact-information">
+        <div class="info-card">
+            <div class="info-icon">📍</div>
+            <h3>Lokalizacja</h3>
+            <p>Adres firmy</p>
+            <span>Ulica i numer, kod pocztowy, miasto</span>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">📞</div>
+            <h3>Telefon</h3>
+            <p>+48 000 000 000</p>
+            <span>Poniedziałek – Piątek</span>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">✉️</div>
+            <h3>E-mail</h3>
+            <p>kontakt@twojafirma.pl</p>
+            <span>Odpowiadamy w 24h</span>
+        </div>
+    </section>
+
+    <section class="contact-main">
+        <div class="contact-description">
+            <span class="eyebrow">Formularz kontaktowy</span>
+            <h2>W czym możemy Ci pomóc?</h2>
+            <p>
+                Wybierz odpowiednią kategorię, uzupełnij dane kontaktowe 
+                i opisz szczegóły zapytania. Twoja wiadomość trafi bezpośrednio 
+                do zespołu odpowiedzialnego za dany obszar.
+            </p>
+
+            <div class="contact-note">
+                <strong>Bezpieczeństwo i poufność</strong>
+                <p>
+                    Wszystkie przekazane informacje są chronione i wykorzystywane 
+                    wyłącznie w celu obsługi Twojego zapytania.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-card">
+            <form id="contactForm">
+                <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Imię i nazwisko *</label>
+                        <input type="text" id="name" name="name" placeholder="Jan Kowalski" maxlength="150" autocomplete="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Adres e-mail *</label>
+                        <input type="email" id="email" name="email" placeholder="jan@email.pl" maxlength="190" autocomplete="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Numer telefonu</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+48 000 000 000" maxlength="30" autocomplete="tel">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Temat kontaktu *</label>
+                        <select id="category" name="category" required>
+                            <option value="">Wybierz kategorię</option>
+                            <option value="Oferta i wycena">Oferta i wycena</option>
+                            <option value="Produkty i usługi">Produkty i usługi</option>
+                            <option value="Współpraca biznesowa">Współpraca biznesowa</option>
+                            <option value="Zamówienia i realizacja">Zamówienia i realizacja</option>
+                            <option value="Reklamacje">Reklamacje</option>
+                            <option value="Serwis i wsparcie techniczne">Serwis i wsparcie techniczne</option>
+                            <option value="Faktury i płatności">Faktury i płatności</option>
+                            <option value="Marketing i media">Marketing i media</option>
+                            <option value="Praca i rekrutacja">Praca i rekrutacja</option>
+                            <option value="Inne">Inne</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Temat wiadomości</label>
+                    <input type="text" id="subject" name="subject" placeholder="Czego dotyczy Twoja wiadomość?" maxlength="200">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Treść wiadomości *</label>
+                    <textarea id="message" name="message" rows="6" maxlength="10000" placeholder="Napisz w czym możemy Ci pomóc..." required></textarea>
+                </div>
+
+                <label class="privacy-checkbox">
+                    <input type="checkbox" id="consent" required>
+                    <span>
+                        Zapoznałem/am się z <a href="prywatnosci.html">polityką prywatności</a> i wyrażam zgodę na przetwarzanie danych.
+                    </span>
+                </label>
+
+                <button type="submit" id="submitButton">
+                    <span>Wyślij wiadomość</span>
+                    <span class="button-arrow">→</span>
+                </button>
+
+                <p class="required-info">* Pola wymagane</p>
+            </form>
+        </div>
+    </section>
+
+    <section class="contact-map">
+        <h2>Znajdź nas na mapie</h2>
+        <iframe src="https://www.google.com/maps?q=Zabrze&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+</main>
+
+<!-- PANEL ADMINISTRATORA -->
+<section class="admin-panel" id="adminPanel" hidden>
+    <h2>Panel administratora INsolutions</h2>
+    <div id="adminLogin" style="margin-top: 20px;">
+        <p style="margin-bottom: 15px;">Zaloguj się, aby zobaczyć wiadomości klientów.</p>
+        <form id="adminLoginForm">
+            <div class="form-group">
+                <label for="adminEmail">Adres e-mail</label>
+                <input type="email" id="adminEmail" required autocomplete="username">
+            </div>
+            <div class="form-group">
+                <label for="adminPassword">Hasło</label>
+                <input type="password" id="adminPassword" required autocomplete="current-password">
+            </div>
+            <button type="submit" id="submitButton" style="max-width: 200px; margin-top: 10px;">Zaloguj się</button>
+        </form>
+        <p id="adminLoginMessage" role="status" style="margin-top: 10px; font-weight: 600;"></p>
+    </div>
+
+    <div id="adminContent" hidden>
+        <div class="admin-top" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2>Wiadomości klientów</h2>
+            <button id="adminLogout" style="padding: 8px 16px; background: var(--navy); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Wyloguj się</button>
+        </div>
+        <p id="adminCount" style="margin-bottom: 10px; color: var(--gray);">Ładowanie wiadomości...</p>
+        <input type="search" id="adminSearch" placeholder="Szukaj w wiadomościach..." style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid var(--border-color); border-radius: 8px;">
+        <div id="adminMessages"></div>
+    </div>
+</section>
+
+<footer class="contact-footer">
+    <p>© <span id="year"></span> inSolutions. Wszelkie prawa zastrzeżone.</p>
+    <a href="prawo.html">Polityka prywatności</a>
+</footer>
+
+<!-- UKRYTY ELEMENT TŁUMACZA GOOGLE -->
+<div id="google_translate_element"></div>
+
+
+<!-- Przycisk powrotu na górę -->
+<button id="backToTop" title="Wróć na górę" aria-label="Wróć na górę">
+  ↑
+</button>
+
+<style>
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: #e5a900;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+#backToTop:hover {
+  background: #bd8b00;
+  transform: translateY(-5px);
+}
+</style>
+
+<script>
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function() {
+  if (window.scrollY > 300) {
+    backToTop.style.display = "block";
+  } else {
+    backToTop.style.display = "none";
+  }
+});
+
+backToTop.addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+</script>
+
+<!-- SKRYPTY -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll(".menu nav a");
+        const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+        links.forEach(link => {
+            const href = link.getAttribute("href");
+            if (!href || href.startsWith("http") || href.startsWith("#")) return;
+            if (href.split("#")[0] === currentPage) {
+                link.classList.add("active");
+                link.setAttribute("aria-current", "page");
+            }
+        });
+    });
+</script>
+
+<!-- TŁUMACZENIE GOOGLE -->
+<script>
+let translateReady = false;
+function googleTranslateInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'pl',
+        includedLanguages: 'pl,en,de',
+        autoDisplay: false
+    }, 'google_translate_element');
+    translateReady = true;
+}
+
+function changeLanguage(language) {
+    if (!translateReady) {
+        alert("Tłumacz jeszcze się ładuje. Spróbuj za chwilę.");
+        return;
+    }
+    const select = document.querySelector('#google_translate_element select.goog-te-combo');
+    if (!select) {
+        alert("Nie udało się załadować tłumacza Google.");
+        return;
+    }
+    select.value = language;
+    select.dispatchEvent(new Event('change', { bubbles: true }));
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateInit"></script>
+
+<!-- SUPABASE I OBSŁUGA FORMULARZA -->
+<script>
+const SUPABASE_URL = "https://umpepvcbaufwykfgvusd.supabase.co";
+const SUPABASE_KEY = "sb_publishable_zJHozD9wR1dUZcbfObtUYg_Tak-Tts9";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const formularz = document.getElementById("contactForm");
+    const przycisk = document.getElementById("submitButton");
+    const komunikat = document.getElementById("formMessage");
+
+    if (formularz) {
+        formularz.addEventListener("submit", async function(e) {
+            e.preventDefault();
+            przycisk.disabled = true;
+            przycisk.querySelector("span").textContent = "Wysyłanie...";
+            komunikat.className = "form-message";
+            komunikat.textContent = "";
+
+            const dane = {
+                imie_nazwisko: document.getElementById("name").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                telefon: document.getElementById("phone").value.trim(),
+                temat: document.getElementById("category").value,
+                subject: document.getElementById("subject").value.trim(),
+                wiadomosc: document.getElementById("message").value.trim(),
+                zgoda: document.getElementById("consent").checked
+            };
+
+            try {
+                const { error } = await supabaseClient.from("wiadomosci").insert([dane]);
+                if (error) throw error;
+
+                komunikat.textContent = "Dziękujemy! Twoja wiadomość została wysłana pomyślnie.";
+                komunikat.className = "form-message success";
+                formularz.reset();
+            } catch (error) {
+                console.error("Błąd Supabase:", error);
+                komunikat.textContent = "Nie udało się wysłać wiadomości. Spróbuj ponownie później.";
+                komunikat.className = "form-message error";
+            } finally {
+                przycisk.disabled = false;
+                przycisk.querySelector("span").textContent = "Wyślij wiadomość";
+            }
+        });
+    }
+});
+</script>
+
+<!-- PANEL ADMINA -->
+<script>
+document.addEventListener("DOMContentLoaded", async function () {
+    const panel = document.getElementById("adminPanel");
+    if (window.location.hash !== "#admin") return;
+    panel.hidden = false;
+
+    const login = document.getElementById("adminLogin");
+    const content = document.getElementById("adminContent");
+    const loginForm = document.getElementById("adminLoginForm");
+    const loginMessage = document.getElementById("adminLoginMessage");
+    const messagesContainer = document.getElementById("adminMessages");
+    const count = document.getElementById("adminCount");
+    const search = document.getElementById("adminSearch");
+    let allMessages = [];
+
+    async function loadMessages() {
+        messagesContainer.replaceChildren();
+        count.textContent = "Ładowanie wiadomości...";
+
+        const { data, error } = await supabaseClient
+            .from("wiadomosci")
+            .select("*")
+            .order("data_wyslania", { ascending: false });
+
+        if (error) {
+            count.textContent = "Nie udało się pobrać wiadomości.";
+            console.error(error);
+            return;
+        }
+
+        allMessages = data || [];
+        renderMessages(allMessages);
+    }
+
+    function renderMessages(messages) {
+        messagesContainer.replaceChildren();
+        count.textContent = "Liczba wiadomości: " + messages.length;
+
+        if (messages.length === 0) {
+            messagesContainer.textContent = "Nie znaleziono wiadomości.";
+            return;
+        }
+
+        messages.forEach(function (message) {
+            const article = document.createElement("article");
+            article.className = "admin-message";
+
+            const title = document.createElement("h3");
+            title.textContent = message.imie_nazwisko;
+            title.style.color = "var(--navy)";
+            title.style.marginBottom = "8px";
+
+            const email = document.createElement("p");
+            email.textContent = "E-mail: " + message.email;
+
+            const phone = document.createElement("p");
+            phone.textContent = "Telefon: " + (message.telefon || "-");
+
+            const category = document.createElement("p");
+            category.textContent = "Kategoria: " + message.temat;
+
+            const subject = document.createElement("p");
+            subject.textContent = "Temat: " + (message.subject || "-");
+
+            const date = document.createElement("p");
+            date.textContent = "Data: " + new Date(message.data_wyslania).toLocaleString("pl-PL");
+
+            const body = document.createElement("p");
+            body.textContent = "Wiadomość: " + message.wiadomosc;
+            body.style.marginTop = "10px";
+            body.style.paddingTop = "10px";
+            body.style.borderTop = "1px solid var(--border-color)";
+
+            article.append(title, email, phone, category, subject, date, body);
+            messagesContainer.appendChild(article);
+        });
+    }
+
+    loginForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        loginMessage.textContent = "Logowanie...";
+        const email = document.getElementById("adminEmail").value;
+        const password = document.getElementById("adminPassword").value;
+
+        const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+        if (error) {
+            loginMessage.textContent = "Błędny e-mail lub hasło.";
+            loginMessage.style.color = "var(--error, #a52222)";
+            return;
+        }
+
+        loginMessage.textContent = "";
+        await checkSession();
+    });
+
+    async function checkSession() {
+        const { data, error } = await supabaseClient.auth.getSession();
+        if (error || !data.session) {
+            login.hidden = false;
+            content.hidden = true;
+            return;
+        }
+        login.hidden = true;
+        content.hidden = false;
+        await loadMessages();
+    }
+
+    if (search) {
+        search.addEventListener("input", function () {
+            const phrase = search.value.toLowerCase();
+            const filtered = allMessages.filter(function (m) {
+                return [m.imie_nazwisko, m.email, m.temat, m.subject, m.wiadomosc].some(value =>
+                    String(value || "").toLowerCase().includes(phrase)
+                );
+            });
+            renderMessages(filtered);
+        });
+    }
+
+    const logoutBtn = document.getElementById("adminLogout");
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", async function () {
+            await supabaseClient.auth.signOut();
+            login.hidden = false;
+            content.hidden = true;
+            loginForm.reset();
+            messagesContainer.replaceChildren();
+        });
+    }
+
+    await checkSession();
+});
+</script>
+
+ <style>
+    /* Twój oryginalny CSS i reset (skrócony w komentarzu dla przejrzystości) */
+    /* --- Początek Twoich styli --- */
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: #263445;
+        background: #f7f8fa;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        transition: filter 0.3s, zoom 0.3s;
+    }
+    /* ... Tutaj wklej pełen Twój oryginalny CSS (pomięszany powyżej) ... */
+    /* --- Panel dostępności WCAG --- */
+    #accessibility-panel {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background: #17345b;
+      padding: 0.5em;
+      border-radius: 0 8px 8px 0;
+      z-index: 100000;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4em;
+    }
+    #accessibility-panel button {
+      background: transparent;
+      color: white;
+      border: none;
+      cursor: pointer;
+      width: 48px;
+      height: 48px;
+      font-size: 22px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #accessibility-panel button:hover,
+    #accessibility-panel button:focus {
+      background-color: #005ea5;
+      outline: 3px solid #ffd54f;
+      outline-offset: 2px;
+    }
+
+  /* Style dla trybów dostępności */
+  body.high-contrast {
+    background-color: black !important;
+    color: yellow !important;
+  }
+  
+  /* Dodanie obsługi wszystkich głównych elementów tekstowych */
+  body.high-contrast p,
+  body.high-contrast h1,
+  body.high-contrast h2,
+  body.high-contrast h3,
+  body.high-contrast h4,
+  body.high-contrast h5,
+  body.high-contrast h6,
+  body.high-contrast li,
+  body.high-contrast span,
+  body.high-contrast a,
+  body.high-contrast button {
+    color: yellow !important;
+  }
+
+  body.high-contrast a:hover,
+  body.high-contrast button:hover {
+    color: #ffea00 !important;
+  }
+
+  body.zoom-in {
+    zoom: 1.2;
+  }
+
+  body.zoom-out {
+    zoom: 0.8;
+  }
+  </style>
+</head>
+<body>
+
+<!-- Panel dostępności WCAG -->
+<div id="accessibility-panel" aria-label="Panel dostępności" role="region">
+
+  <button id="btn-contrast" aria-label="Przełącz tryb wysokiego kontrastu" aria-pressed="false" title="Wysoki kontrast">⚫</button>
+  <button id="btn-zoom-in" aria-label="Powiększ stronę" title="Powiększ stronę">A+</button>
+  <button id="btn-zoom-out" aria-label="Zmniejsz stronę" title="Zmniejsz stronę">A-</button>
+  <button id="btn-reset" aria-label="Resetuj ustawienia dostępności" title="Resetuj">↺</button>
+</div>
+<!-- Panel tłumaczenia języka migowego -->
+<div id="sign-language-panel" role="region" aria-label="Tłumaczenie na język migowy" tabindex="-1">
+  <button id="btn-close-sign-language" class="close" aria-label="Zamknij tłumaczenie języka migowego">✖</button>
+ 
+
+
+<script>
+  const btnSign = document.getElementById('btn-sign-language');
+  const btnContrast = document.getElementById('btn-contrast');
+  const btnZoomIn = document.getElementById('btn-zoom-in');
+  const btnZoomOut = document.getElementById('btn-zoom-out');
+  const btnReset = document.getElementById('btn-reset');
+  const signPanel = document.getElementById('sign-language-panel');
+  const btnCloseSL = document.getElementById('btn-close-sign-language');
+  btnSign.addEventListener('click', () => {
+    if (signPanel.style.display === 'block') {
+      signPanel.style.display = 'none';
+      btnSign.setAttribute('aria-pressed', 'false');
+    } else {
+      signPanel.style.display = 'block';
+      btnSign.setAttribute('aria-pressed', 'true');
+      signPanel.focus();
+    }
+  });
+  btnCloseSL.addEventListener('click', () => {
+    signPanel.style.display = 'none';
+    btnSign.setAttribute('aria-pressed', 'false');
+    btnSign.focus();
+  });
+  btnContrast.addEventListener('click', () => {
+    document.body.classList.toggle('high-contrast');
+    const pressed = document.body.classList.contains('high-contrast');
+    btnContrast.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+  });
+  btnZoomIn.addEventListener('click', () => {
+    document.body.classList.add('zoom-in');
+    document.body.classList.remove('zoom-out');
+  });
+  btnZoomOut.addEventListener('click', () => {
+    document.body.classList.add('zoom-out');
+    document.body.classList.remove('zoom-in');
+  });
+  btnReset.addEventListener('click', () => {
+    document.body.classList.remove('high-contrast', 'zoom-in', 'zoom-out');
+    btnContrast.setAttribute('aria-pressed', 'false');
+  });
+</script>
+<script>
+    
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const przycisk = document.getElementById("moja-lupa");
+    const okno = document.getElementById("moje-okno-wyszukiwania");
+    const pole = document.getElementById("moje-pole");
+    const wyniki = document.getElementById("moje-wyniki");
+
+    const strony = [
+        { nazwa: "Strona główna", plik: "index.html" },
+        { nazwa: "Oferta", plik: "oferta.html" },
+        { nazwa: "Wdrożenia", plik: "wdrozenia.html" },
+        { nazwa: "Kontakt", plik: "kontakt.html" },
+        { nazwa: "Kalkulator", plik: "kalkulator.html" }
+    ];
+
+    let wszystkieStrony = [];
+
+    function normalizuj(tekst) {
+        return tekst.toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    async function pobierzStrony() {
+
+        wyniki.textContent = "Ładowanie stron...";
+
+        const pobrane = await Promise.all(
+            strony.map(async function(strona) {
+
+                try {
+
+                    const odpowiedz = await fetch(strona.plik);
+
+                    if (!odpowiedz.ok) return null;
+
+                    const html = await odpowiedz.text();
+
+                    const dokument = new DOMParser()
+                        .parseFromString(html, "text/html");
+
+                    dokument.querySelectorAll(
+                        "script, style, noscript"
+                    ).forEach(el => el.remove());
+
+                    const tresc = dokument.body.innerText
+                        .replace(/\s+/g, " ")
+                        .trim();
+
+                    return {
+                        nazwa: strona.nazwa,
+                        plik: strona.plik,
+                        tresc: tresc
+                    };
+
+                } catch(error) {
+
+                    console.error(error);
+                    return null;
+
+                }
+
+            })
+        );
+
+        wszystkieStrony = pobrane.filter(Boolean);
+
+        wyniki.textContent = "";
+
+        if (pole.value.trim().length >= 2) {
+            szukaj();
+        }
+    }
+
+    function szukaj() {
+
+        const zapytanie = normalizuj(pole.value.trim());
+
+        wyniki.replaceChildren();
+
+        if (zapytanie.length < 2) return;
+
+        const znalezione = wszystkieStrony.filter(strona =>
+            normalizuj(strona.tresc).includes(zapytanie)
+        );
+
+        if (znalezione.length === 0) {
+
+            wyniki.textContent = "Nie znaleziono wyników.";
+            return;
+
+        }
+
+        znalezione.forEach(strona => {
+
+            const karta = document.createElement("div");
+            karta.className = "wynik-wyszukiwania";
+
+            const link = document.createElement("a");
+            link.href = strona.plik;
+            link.textContent = strona.nazwa;
+
+            const trescNormalna = normalizuj(strona.tresc);
+            const pozycja = trescNormalna.indexOf(zapytanie);
+
+            const poczatek = Math.max(0, pozycja - 55);
+            const koniec = Math.min(
+                strona.tresc.length,
+                pozycja + zapytanie.length + 80
+            );
+
+            const fragment = document.createElement("p");
+
+            fragment.textContent =
+                "..." +
+                strona.tresc.substring(poczatek, koniec) +
+                "...";
+
+            karta.appendChild(link);
+            karta.appendChild(fragment);
+
+            wyniki.appendChild(karta);
+
+        });
+
+    }
+
+    przycisk.addEventListener("click", function() {
+
+        okno.classList.toggle("aktywne");
+
+        if (okno.classList.contains("aktywne")) {
+            pole.focus();
+        }
+
+    });
+
+    pole.addEventListener("input", szukaj);
+
+    document.addEventListener("keydown", function(e) {
+
+        if (e.key === "Escape") {
+            okno.classList.remove("aktywne");
+        }
+
+    });
+
+    pobierzStrony();
+
+});
+
+
+</script>
+</body>
+</html>
+

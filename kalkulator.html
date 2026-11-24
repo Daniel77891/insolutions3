@@ -1,0 +1,974 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Kalkulator wdrożenia – inSolutions</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #edf3f8;
+    color: #26374b;
+}
+
+header {
+    background: #17345b;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+header p {
+    color: #cbd8e8;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 8px;
+}
+
+nav a:hover {
+    color: #8ac7ff;
+}
+
+.kontener {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.karta {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+h2, h3 {
+    color: #17345b;
+}
+
+.opis {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.sekcja {
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.pole {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 9px;
+    color: #17345b;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccd7e2;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin: 7px 0;
+    background: #f5f8fb;
+    border-radius: 6px;
+}
+
+.checkbox input {
+    width: 18px;
+    height: 18px;
+    accent-color: #2878bd;
+}
+
+.checkbox label {
+    margin: 0;
+    font-weight: normal;
+    flex: 1;
+}
+
+.cena-integracji {
+    display: block;
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.info {
+    background: #fff8e7;
+    border-left: 4px solid #e5a52c;
+    padding: 15px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 6px;
+    background: #4d9e39;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+button:hover {
+    background: #397d2b;
+}
+
+.przycisk-pdf {
+    background: #2878bd;
+}
+
+.przycisk-email {
+    background: #17345b;
+}
+
+.wynik {
+    display: none;
+    margin-top: 30px;
+    padding: 25px;
+    background: #edf5fb;
+    border-left: 5px solid #2878bd;
+    border-radius: 6px;
+}
+
+.cena {
+    font-size: 35px;
+    font-weight: bold;
+    color: #2878bd;
+    margin: 15px 0;
+}
+
+.szczegoly {
+    line-height: 2;
+    color: #526477;
+}
+
+.szczegoly div {
+    border-bottom: 1px solid #d7e3ed;
+    padding: 5px 0;
+}
+
+.uwaga {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+footer {
+    background: #17345b;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 60px;
+}
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-switcher button {
+    background: transparent;
+    border: 1px solid #2878bd;
+    color: inherit;
+    padding: 9px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.language-switcher button:hover {
+    background: #2878bd;
+    color: white;
+}
+
+#google_translate_element {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Kalkulator wdrożenia</h1>
+
+<p>inSolutions – Subiekt nexo PRO</p>
+
+<nav>
+<a href="index.html">STRONA GŁÓWNA</a>
+<a href="oferta.html">OFERTA</a>
+<a href="wdrozenia.html">WDROŻENIA</a>
+<a href="https://www.insklep.pl/">INSKLEP</a>
+<a href="kontakt.html">KONTAKT</a>
+
+
+<div class="language-switcher">
+    <button onclick="changeLanguage('pl')">PL 🇵🇱</button>
+    <button onclick="changeLanguage('en')">EN 🇬🇧</button>
+    <button onclick="changeLanguage('de')">DE 🇩🇪</button>
+</div>
+
+<div id="google_translate_element"></div>
+
+
+        </nav>
+
+    
+
+</header>
+
+
+<div class="kontener">
+
+<div class="karta">
+
+<div class="formularz">
+
+<h2>Konfigurator wdrożenia</h2>
+
+<p class="opis">
+Wybierz zakres wdrożenia Subiekt nexo PRO,
+liczbę użytkowników oraz dodatkowe rozwiązania.
+Sprawdź orientacyjny koszt współpracy z inSolutions.
+</p>
+
+
+<!-- 1. UŻYTKOWNICY -->
+
+<div class="sekcja">
+
+<h3>1. Użytkownicy i stanowiska</h3>
+
+<div class="pole">
+
+<label for="osoby">Liczba użytkowników</label>
+
+<input type="number" id="osoby" min="1" max="500" value="1">
+
+</div>
+
+<div class="pole">
+
+<label for="stanowiska">Dodatkowe stanowiska pracy</label>
+
+<input type="number" id="stanowiska" min="0" max="500" value="0">
+
+</div>
+
+</div>
+
+
+<!-- 2. WDROŻENIE -->
+
+<div class="sekcja">
+
+<h3>2. Rodzaj wdrożenia</h3>
+
+<div class="pole">
+
+<label for="wdrozenie">Wybierz zakres wdrożenia</label>
+
+<select id="wdrozenie">
+
+<option value="1000">Podstawowe – 1000 zł</option>
+
+<option value="3000">Standardowe – 3000 zł</option>
+
+<option value="5000">Zaawansowane – 5000 zł</option>
+
+</select>
+
+</div>
+
+<div class="pole">
+
+<label for="szkolenie">Szkolenie pracowników</label>
+
+<select id="szkolenie">
+
+<option value="0">Bez szkolenia – 0 zł</option>
+
+<option value="1000">Szkolenie – 1000 zł</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<!-- 3. INTEGRACJE -->
+
+<div class="sekcja">
+
+<h3>3. Rozwiązania i integracje inSolutions</h3>
+
+<p class="opis">
+Wybierz rozwiązania, które chcesz wykorzystać
+w swojej firmie.
+</p>
+
+
+<h3>inTradus</h3>
+
+<div class="checkbox">
+
+<input type="radio" name="tradus" id="tradus0" value="0" checked>
+
+<label for="tradus0">
+Nie wybieram inTradus
+</label>
+
+</div>
+
+<div class="checkbox">
+
+<input type="radio" name="tradus" id="tradus1" value="299">
+
+<label for="tradus1">
+inTradus START B2B
+
+<span class="cena-integracji">
+Od 299 zł netto / miesiąc
+</span>
+
+</label>
+
+</div>
+
+<div class="checkbox">
+
+<input type="radio" name="tradus" id="tradus2" value="399">
+
+<label for="tradus2">
+inTradus START B2B + sklep internetowy
+
+<span class="cena-integracji">
+Od 399 zł netto / miesiąc
+</span>
+
+</label>
+
+</div>
+
+
+<h3>Inne rozwiązania</h3>
+
+<div class="checkbox">
+
+<input type="checkbox" id="mobilus">
+
+<label for="mobilus">
+inMobilus – aplikacja dla przedstawicieli handlowych
+
+<span class="cena-integracji">
+Wycena indywidualna
+</span>
+
+</label>
+
+</div>
+
+<div class="checkbox">
+
+<input type="checkbox" id="wms">
+
+<label for="wms">
+inWMS – zarządzanie magazynem
+
+<span class="cena-integracji">
+Wycena indywidualna
+</span>
+
+</label>
+
+</div>
+
+
+<div class="checkbox">
+
+<input type="checkbox" id="inne">
+
+<label for="inne">
+Inne integracje i rozwiązania
+
+<span class="cena-integracji">
+Wycena indywidualna
+</span>
+
+</label>
+
+</div>
+
+<div class="info">
+
+Ceny inTradus są orientacyjnymi cenami abonamentowymi
+netto. Pozostałe rozwiązania wymagają indywidualnej
+wyceny. Koszt licencji Subiekt nexo PRO nie jest
+uwzględniony w kalkulacji.
+
+</div>
+
+</div>
+
+
+<!-- 4. DANE KLIENTA -->
+
+<div class="sekcja">
+
+<h3>4. Dane kontaktowe</h3>
+
+<div class="pole">
+
+<label for="firma">Nazwa firmy</label>
+
+<input type="text" id="firma" placeholder="Nazwa firmy">
+
+</div>
+
+<div class="pole">
+
+<label for="imie">Imię i nazwisko</label>
+
+<input type="text" id="imie" placeholder="Osoba kontaktowa">
+
+</div>
+
+<div class="pole">
+
+<label for="email">Adres e-mail</label>
+
+<input type="email" id="email" placeholder="adres@firma.pl">
+
+</div>
+
+<div class="pole">
+
+<label for="telefon">Telefon</label>
+
+<input type="text" id="telefon" placeholder="Numer telefonu">
+
+</div>
+
+<div class="pole">
+
+<label for="uwagi">Dodatkowe informacje</label>
+
+<textarea id="uwagi" placeholder="Opisz potrzeby firmy, oczekiwane funkcje, obecne systemy i dodatkowe wymagania..."></textarea>
+
+</div>
+
+</div>
+
+
+<button onclick="oblicz()">
+OBLICZ KOSZT WDROŻENIA
+</button>
+
+</div>
+
+
+<!-- WYNIK -->
+
+<div class="wynik" id="wynik">
+
+<h2>Twoja kalkulacja</h2>
+
+<p id="dataKalkulacji"></p>
+
+<h3>Jednorazowy koszt wdrożenia</h3>
+
+<div class="cena" id="cena">0 zł</div>
+
+<h3>Szczegółowe zestawienie</h3>
+
+<div class="szczegoly" id="szczegoly"></div>
+
+<h3>Abonament miesięczny</h3>
+
+<div class="cena" id="abonament">0 zł</div>
+
+<div class="uwaga">
+
+Podana kwota ma charakter orientacyjny i nie stanowi
+oferty handlowej. Ostateczna wycena zależy od zakresu
+wdrożenia oraz indywidualnych potrzeb firmy.
+
+Ceny abonamentowe i wdrożeniowe mogą wymagać
+potwierdzenia przez inSolutions.
+
+</div>
+
+<div class="przyciski">
+
+<button class="przycisk-pdf" onclick="zapiszPDF()">
+POBIERZ KALKULACJĘ PDF
+</button>
+
+<button class="przycisk-email" onclick="wyslijEmail()">
+WYŚLIJ KALKULACJĘ DO IN SOLUTIONS
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+
+    <div class="stopka">
+
+        <div class="linki-stopka">
+
+            <a href="polityka.html">Polityka prywatności</a>
+
+            <a href="prawo.html">Prawo autorskie</a>
+
+        </div>
+
+        <p>© 2026 inSolutions. Wszystkie prawa zastrzeżone.</p>
+
+    </div>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+// ADRES E-MAIL FIRMY
+
+const EMAIL_FIRMY = "grzesikdaniel182@gmail.com";
+
+let ostatniaKalkulacja = 0;
+
+
+// FUNKCJA OBLICZAJĄCA KOSZT
+
+function oblicz() {
+
+    let osoby = Number(document.getElementById("osoby").value);
+
+    let stanowiska = Number(document.getElementById("stanowiska").value);
+
+    let wdrozenie = Number(document.getElementById("wdrozenie").value);
+
+    let szkolenie = Number(document.getElementById("szkolenie").value);
+
+
+    // SPRAWDZENIE DANYCH
+
+    if (
+        osoby < 1 || osoby > 500 ||
+        stanowiska < 0 || stanowiska > 500 ||
+        osoby % 1 != 0 ||
+        stanowiska % 1 != 0
+    ) {
+
+        alert("Wprowadź prawidłowe dane!");
+
+        return;
+
+    }
+
+
+    // OBLICZANIE KOSZTÓW
+
+    let kosztOsob = osoby * 100;
+
+    let kosztStanowisk = stanowiska * 200;
+
+    let koszt = wdrozenie + szkolenie +
+                kosztOsob + kosztStanowisk;
+
+
+    // ABONAMENT INTRADUS
+
+    let abonament = 0;
+
+    if (document.getElementById("tradus1").checked) {
+        abonament = 299;
+    }
+
+    if (document.getElementById("tradus2").checked) {
+        abonament = 399;
+    }
+
+
+    // WYBRANE INTEGRACJE
+
+    let wybrane = "";
+
+    if (document.getElementById("mobilus").checked) {
+        wybrane += "inMobilus, ";
+    }
+
+    if (document.getElementById("wms").checked) {
+        wybrane += "inWMS, ";
+    }
+
+    if (document.getElementById("inne").checked) {
+        wybrane += "Inne integracje, ";
+    }
+
+    if (wybrane == "") {
+        wybrane = "Brak";
+    }
+
+
+    // NAZWA INTRADUS
+
+    let nazwaTradus = "Nie wybrano";
+
+    if (document.getElementById("tradus1").checked) {
+        nazwaTradus = "inTradus START B2B";
+    }
+
+    if (document.getElementById("tradus2").checked) {
+        nazwaTradus = "inTradus START B2B + sklep internetowy";
+    }
+
+
+    // ZAPISANIE WYNIKU
+
+    ostatniaKalkulacja = koszt;
+
+
+    // WYŚWIETLENIE CENY
+
+    document.getElementById("cena").innerHTML =
+        koszt.toLocaleString("pl-PL") + " zł netto";
+
+
+    document.getElementById("abonament").innerHTML =
+        abonament + " zł netto / miesiąc";
+
+
+    // SZCZEGÓŁY
+
+    document.getElementById("szczegoly").innerHTML =
+
+        "Liczba użytkowników: " + osoby +
+
+        "<br>Koszt użytkowników: " + kosztOsob + " zł" +
+
+        "<br>Dodatkowe stanowiska: " + stanowiska +
+
+        "<br>Koszt stanowisk: " + kosztStanowisk + " zł" +
+
+        "<br>Wdrożenie: " + wdrozenie + " zł" +
+
+        "<br>Szkolenie: " + szkolenie + " zł" +
+
+        "<br>inTradus: " + nazwaTradus +
+
+        "<br>Wybrane integracje: " + wybrane;
+
+
+    // DATA
+
+    document.getElementById("dataKalkulacji").innerHTML =
+        "Data kalkulacji: " + new Date().toLocaleDateString("pl-PL");
+
+
+    // POKAZANIE WYNIKU
+
+    document.getElementById("wynik").style.display = "block";
+
+    document.getElementById("wynik").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+// FUNKCJA PRZYGOTOWUJĄCA TREŚĆ E-MAILA
+
+function pobierzOpis() {
+
+    let firma = document.getElementById("firma").value;
+
+    let imie = document.getElementById("imie").value;
+
+    let email = document.getElementById("email").value;
+
+    let telefon = document.getElementById("telefon").value;
+
+    let uwagi = document.getElementById("uwagi").value;
+
+
+    let opis =
+
+        "KALKULACJA WDROŻENIA INSOLUTIONS\n\n" +
+
+        "Firma: " + firma + "\n" +
+
+        "Osoba kontaktowa: " + imie + "\n" +
+
+        "E-mail: " + email + "\n" +
+
+        "Telefon: " + telefon + "\n\n" +
+
+        "Jednorazowy koszt wdrożenia: " +
+        ostatniaKalkulacja + " zł netto\n\n" +
+
+        "Abonament inTradus: " +
+        document.getElementById("abonament").innerText + "\n\n" +
+
+        "Szczegóły:\n" +
+        document.getElementById("szczegoly").innerText + "\n\n" +
+
+        "Dodatkowe informacje:\n" + uwagi;
+
+
+    return opis;
+
+}
+
+
+// ZAPIS DO PDF
+
+function zapiszPDF() {
+
+    if (ostatniaKalkulacja == 0) {
+
+        alert("Najpierw oblicz koszt wdrożenia!");
+
+        return;
+
+    }
+
+    window.print();
+
+}
+
+
+// WYSYŁANIE E-MAILA
+
+function wyslijEmail() {
+
+    if (ostatniaKalkulacja == 0) {
+
+        alert("Najpierw oblicz koszt wdrożenia!");
+
+        return;
+
+    }
+
+    let email = document.getElementById("email").value;
+
+    if (email == "" || email.indexOf("@") == -1) {
+
+        alert("Wpisz prawidłowy adres e-mail!");
+
+        return;
+
+    }
+
+    if (EMAIL_FIRMY == "") {
+
+        alert("Najpierw wpisz adres e-mail firmy w kodzie strony!");
+
+        return;
+
+    }
+
+    let temat = "Kalkulacja wdrożenia Subiekt nexo PRO";
+
+    let tresc = pobierzOpis();
+
+    window.location.href =
+
+        "mailto:" + EMAIL_FIRMY +
+
+        "?subject=" + encodeURIComponent(temat) +
+
+        "&body=" + encodeURIComponent(tresc);
+
+}
+
+</script>
+<!-- GOOGLE TRANSLATE -->
+
+<script>
+let translateReady = false;
+
+function googleTranslateInit() {
+
+    new google.translate.TranslateElement({
+        pageLanguage: 'pl',
+        includedLanguages: 'pl,en,de',
+        autoDisplay: false
+    }, 'google_translate_element');
+
+    translateReady = true;
+}
+
+function changeLanguage(language) {
+
+    if (!translateReady) {
+        alert("Tłumacz jeszcze się ładuje. Spróbuj za chwilę.");
+        return;
+    }
+
+    const select = document.querySelector(
+        '#google_translate_element select.goog-te-combo'
+    );
+
+    if (!select) {
+        alert("Nie udało się załadować tłumacza Google.");
+        return;
+    }
+
+    select.value = language;
+
+    select.dispatchEvent(
+        new Event('change', { bubbles: true })
+    );
+}
+</script>
+
+<script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateInit">
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const links = document.querySelectorAll(".menu nav a");
+
+    const currentPage = window.location.pathname
+        .split("/")
+        .pop() || "index.html";
+
+    links.forEach(link => {
+
+        const href = link.getAttribute("href");
+
+        if (!href || href.startsWith("http") || href.startsWith("#")) {
+            return;
+        }
+
+        const linkPage = href.split("#")[0];
+
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+            link.setAttribute("aria-current", "page");
+        }
+
+    });
+
+});
+</script>
+</body>
+</html>

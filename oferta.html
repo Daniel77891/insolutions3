@@ -1,0 +1,1289 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Oferta – inSolutions</title>
+
+    <link rel="stylesheet" href="nexo.css">
+</head>
+<nav class="breadcrumbs" aria-label="Okruszki nawigacyjne">
+    <a href="index.html">Strona główna</a>
+    <span class="separator">›</span>
+    <span aria-current="page">Oferta</span>
+</nav>
+<style>
+        header {
+        background: linear-gradient(rgba(17, 41, 70, 0.75), rgba(17, 41, 70, 0.85)), url("baner4.jpg") center/cover no-repeat;
+        min-height: 520px;
+        color: white;
+    }
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 30px;
+    font-size: 14px;
+}
+
+.breadcrumbs a {
+    color: #17345b;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.breadcrumbs a:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+.breadcrumbs .separator {
+    color: #999;
+}
+
+.breadcrumbs [aria-current="page"] {
+    color: #777;
+    font-weight: 600;
+}
+
+/* WYCENA */
+
+.cennik {
+    padding: 80px 8%;
+    background: #f4f7fb;
+}
+
+.cennik-karta {
+    max-width: 650px;
+    margin: 40px auto 0;
+    padding: 45px;
+    background: white;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.cennik-karta:hover {
+    transform: translateY(-5px);
+}
+
+.cennik-karta h3 {
+    color: #17345b;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.cennik-karta p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.cennik-karta .przycisk {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* NAJCZĘŚCIEJ ZADAWANE PYTANIA */
+
+.faq {
+    padding: 80px 8%;
+    background: white;
+}
+
+.faq details {
+    max-width: 900px;
+    margin: 15px auto;
+    padding: 22px 25px;
+    background: #f4f7fb;
+    border-radius: 10px;
+    border-left: 4px solid #17345b;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.faq details:hover {
+    background: #eaf1f9;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.faq summary {
+    color: #17345b;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.faq details p {
+    color: #555;
+    line-height: 1.8;
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid #ddd;
+}
+.kwadrat {
+    display: block;
+    width: 100%;
+    height: 250px;
+    max-height: none;
+
+    object-fit: contain;
+    object-position: center;
+
+    background-color: white;
+
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* WYBRALI NAS */
+
+.wybrali-nas {
+    padding: 75px 0;
+    background: #2e415a;
+    overflow: hidden;
+}
+
+.wybrali-nas .sekcja-naglowek {
+    padding: 0 8%;
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.wybrali-nas .sekcja-naglowek h2 {
+    color: #ffffff;
+    font-size: 34px;
+}
+
+.karuzela-klientow {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 8%,
+        black 92%,
+        transparent
+    );
+}
+
+.karuzela-tor {
+    display: flex;
+    align-items: center;
+    gap: 65px;
+    width: max-content;
+
+    animation: przewijanie-klientow 35s linear infinite;
+}
+
+.karuzela-tor img {
+    width: 170px;
+    height: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.karuzela-tor img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.karuzela-klientow:hover .karuzela-tor {
+    animation-play-state: paused;
+}
+
+@keyframes przewijanie-klientow {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .karuzela-tor {
+        gap: 35px;
+        animation-duration: 25s;
+    }
+
+    .karuzela-tor img {
+        width: 125px;
+        height: 60px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .karuzela-tor {
+        animation: none;
+    }
+}
+
+</style>
+<body>
+    
+
+<header>
+
+    <div class="menu">
+        <a href="index.html">
+            <img src="logo.svg" alt="inSolutions">
+        </a>
+<nav>
+
+<a href="oferta.html">OFERTA</a>
+<a href="wdrozenia.html">WDROŻENIA</a>
+<a href="https://www.insklep.pl/">INSKLEP</a>
+<a href="kontakt.html">KONTAKT</a>
+
+
+<div class="language-switcher">
+    <button onclick="changeLanguage('pl')">PL 🇵🇱</button>
+    <button onclick="changeLanguage('en')">EN 🇬🇧</button>
+    <button onclick="changeLanguage('de')">DE 🇩🇪</button>
+</div>
+
+<div id="google_translate_element"></div>
+
+
+        </nav>
+    </div>
+
+    <div class="naglowek">
+
+        <h1 id="pierwsze">Rozwiązania inSolutions</h1>
+
+        <h3>Technologia, która rozwija Twój biznes</h3>
+
+        <h5>
+            Poznaj oprogramowanie wspierające sprzedaż,
+            zarządzanie magazynem, obsługę klientów
+            i integrację systemów informatycznych.
+        </h5>
+
+        <a href="#produkty" class="przycisk">
+            POZNAJ PRODUKTY
+        </a>
+
+    </div>
+
+</header>
+
+<section class="wyszukiwarka">
+    <div class="wyszukiwarka-kontener">
+
+        <h2>Jakiego rozwiązania szukasz?</h2>
+
+        <p>
+            Wpisz nazwę produktu lub interesującą Cię funkcjonalność.
+        </p>
+
+        <div class="szukaj-box">
+            <span class="szukaj-ikona">🔍</span>
+
+            <input
+                type="text"
+                id="szukajInput"
+                placeholder="Np. magazyn, sprzedaż, inWMS..."
+                aria-label="Wyszukaj produkty i rozwiązania"
+            >
+
+            <button type="button" id="wyczyscSzukaj">
+                WYCZYŚĆ
+            </button>
+        </div>
+
+        <p id="wynikWyszukiwania" aria-live="polite"></p>
+
+    </div>
+</section>
+
+<main>
+
+    
+<section>
+
+    <div class="sekcja-naglowek">
+        <h2>Kompleksowa oferta dla przedsiębiorstw</h2>
+
+        <p>
+            Dostarczamy rozwiązania informatyczne,
+            które pomagają usprawniać codzienne procesy
+            i dostosowywać oprogramowanie do wymagań firmy.
+        </p>
+    </div>
+
+    <div class="informacje">
+
+        <div class="informacja">
+            <h3>Sprzedaż</h3>
+
+            <div class="tekst-rozwin">
+                <p>
+                    Sprawna obsługa sprzedaży wymaga odpowiednich narzędzi, które pozwalają kontrolować zamówienia, zarządzać relacjami z klientami i efektywnie koordynować działania handlowe. Dostarczamy oprogramowanie wspierające różne obszary procesu sprzedażowego, pomagając przedsiębiorstwom usprawniać obsługę klientów oraz organizację pracy działów handlowych.
+
+                    Nasze rozwiązania pozwalają uporządkować informacje o produktach, kontrahentach, cenach i zamówieniach, zapewniając łatwiejszy dostęp do najważniejszych danych. Umożliwiają również integrację różnych kanałów sprzedaży i systemów wykorzystywanych w przedsiębiorstwie, dzięki czemu informacje mogą być sprawnie przekazywane pomiędzy poszczególnymi obszarami działalności.
+
+                    Wspieramy automatyzację powtarzalnych czynności, ograniczając konieczność ręcznego wprowadzania danych i minimalizując ryzyko pomyłek. Dzięki temu pracownicy mogą skupić się na obsłudze klientów, realizacji zamówień i rozwijaniu sprzedaży.
+                </p>
+            </div>
+
+            <button class="pokaz-wiecej">Pokaż więcej</button>
+        </div>
+
+
+        <div class="informacja">
+            <h3>Magazyn</h3>
+
+            <div class="tekst-rozwin">
+                <p>
+                    Prawidłowe zarządzanie magazynem ma bezpośredni wpływ na sprawność funkcjonowania całego przedsiębiorstwa. Dlatego oferujemy rozwiązania informatyczne, które pomagają kontrolować przepływ towarów, monitorować stany magazynowe oraz usprawniać realizację operacji logistycznych.
+
+                    Dostarczane przez nas oprogramowanie wspiera obsługę podstawowych procesów magazynowych, takich jak przyjmowanie i wydawanie towarów, przesunięcia międzymagazynowe, kontrola dostępności produktów czy ewidencja operacji. Ułatwia bieżące monitorowanie stanów magazynowych i zapewnia dostęp do aktualnych informacji niezbędnych do podejmowania decyzji biznesowych.
+
+                    Istotnym elementem naszych rozwiązań jest możliwość współpracy z innymi systemami wykorzystywanymi w firmie, w szczególności z oprogramowaniem sprzedażowym i księgowym. Dzięki integracji dane mogą być automatycznie przekazywane pomiędzy systemami, co usprawnia realizację zamówień i ogranicza ryzyko rozbieżności informacyjnych.
+
+                    W zależności od potrzeb przedsiębiorstwa rozwiązania mogą być dostosowywane do specyfiki procesów magazynowych, struktury organizacyjnej oraz skali prowadzonej działalności.
+                </p>
+            </div>
+
+            <button class="pokaz-wiecej">Pokaż więcej</button>
+        </div>
+
+
+        <div class="informacja">
+            <h3>Mobilność</h3>
+
+            <div class="tekst-rozwin">
+                <p>
+                    Współczesne przedsiębiorstwa coraz częściej realizują procesy biznesowe poza tradycyjnym stanowiskiem pracy. Przedstawiciele handlowi, pracownicy terenowi, serwisanci i osoby odpowiedzialne za logistykę potrzebują szybkiego dostępu do aktualnych informacji oraz narzędzi umożliwiających wykonywanie zadań w terenie.
+
+                    Tworzymy i wdrażamy rozwiązania mobilne, które rozszerzają możliwości firmowych systemów informatycznych. Umożliwiają one korzystanie z wybranych funkcjonalności oprogramowania za pośrednictwem urządzeń mobilnych, zapewniając pracownikom dostęp do potrzebnych informacji niezależnie od miejsca wykonywania obowiązków.
+
+                    Rozwiązania mobilne mogą wspierać między innymi obsługę klientów, prezentację oferty, przyjmowanie zamówień, kontrolę dostępności produktów oraz przekazywanie informacji do systemów centralnych. Pozwalają również ograniczyć dokumentację papierową i przyspieszyć obieg informacji pomiędzy pracownikami terenowymi a pozostałymi działami przedsiębiorstwa.
+
+                    Dzięki odpowiednio zaprojektowanym narzędziom mobilnym firma może usprawnić organizację pracy, zwiększyć elastyczność działania i zapewnić pracownikom większą niezależność w realizacji codziennych zadań.
+                </p>
+            </div>
+
+            <button class="pokaz-wiecej">Pokaż więcej</button>
+        </div>
+
+
+        <div class="informacja">
+            <h3>Integracje</h3>
+
+            <div class="tekst-rozwin">
+                <p>
+                    W wielu przedsiębiorstwach wykorzystywanych jest jednocześnie kilka różnych systemów informatycznych, odpowiedzialnych za poszczególne obszary działalności. Brak odpowiedniej komunikacji pomiędzy nimi może prowadzić do powielania danych, konieczności wykonywania ręcznych operacji oraz utrudnień w dostępie do aktualnych informacji.
+
+                    Specjalizujemy się w integracji systemów informatycznych, umożliwiając ich sprawną współpracę i automatyczną wymianę danych. Łączymy istniejące oprogramowanie, aplikacje, platformy sprzedażowe i inne rozwiązania wykorzystywane w codziennej działalności przedsiębiorstw.
+
+                    Projektujemy mechanizmy komunikacji dostosowane do specyfiki współpracujących systemów. Wykorzystujemy dostępne interfejsy, mechanizmy wymiany danych i dedykowane rozwiązania integracyjne, aby zapewnić spójny przepływ informacji pomiędzy poszczególnymi aplikacjami.
+
+                    Naszym celem jest stworzenie środowiska, w którym poszczególne systemy uzupełniają się i wspólnie wspierają procesy biznesowe. Dzięki temu przedsiębiorstwo może efektywniej wykorzystywać posiadane oprogramowanie bez konieczności rezygnowania ze sprawdzonych już narzędzi.
+                </p>
+            </div>
+
+            <button class="pokaz-wiecej">Pokaż więcej</button>
+        </div>
+
+    </div>
+
+</section>
+
+    <section id="produkty">
+
+        <div class="sekcja-naglowek">
+
+            <h2>Poznaj nasze produkty</h2>
+
+            <p>
+                Wybierz rozwiązanie odpowiadające
+                potrzebom Twojej działalności.
+            </p>
+
+        </div>
+
+        <div class="produkty">
+
+            <article class="produkt">
+
+                <img src="inTradus_logo_RGB_mono_ciemne_tło.svg" alt="Platforma inTradus" class="kwadrat">
+
+                <div class="produkt-tresc">
+
+                    <h3>inTradus – platforma B2B</h3>
+
+                    <p>
+                        inTradus to platforma sprzedażowa
+                        umożliwiająca rozwój internetowego
+                        kanału sprzedaży dla klientów biznesowych.
+                    </p>
+
+                    <p>
+                        Integracja z Subiektem nexo PRO pozwala
+                        na przekazywanie zamówień do systemu ERP
+                        i udostępnianie klientom aktualnej oferty.
+                    </p>
+
+                    <ul>
+                        <li>Obsługa zamówień internetowych.</li>
+                        <li>Prezentacja oferty dla kontrahentów.</li>
+                        <li>Automatyzacja procesów sprzedaży.</li>
+                        <li>Rozwiązanie dostępne w modelu SaaS.</li>
+                    </ul>
+
+                    <a href="https://www.insolutions.pl/pl/page/intradus">
+                        ZOBACZ PRODUKT →
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="produkt">
+
+                <img src="inWMS_logo_RGB_mono_ciemne_tło.svg" alt="System magazynowy inWMS" class="kwadrat">
+
+                <div class="produkt-tresc">
+
+                    <h3>inWMS – zarządzanie magazynem</h3>
+
+                    <p>
+                        inWMS to system wspierający zarządzanie
+                        procesami magazynowymi i kontrolę
+                        przepływu towarów.
+                    </p>
+
+                    <p>
+                        Pozwala nadzorować przyjęcia, ruch
+                        wewnętrzny oraz wydania towarów.
+                        Wspiera pracę z kodami kreskowymi
+                        i technologią RFID.
+                    </p>
+
+                    <ul>
+                        <li>Kontrola przyjęć i wydań.</li>
+                        <li>Kompletacja zamówień.</li>
+                        <li>Kontrola lokalizacji towarów.</li>
+                        <li>Analiza pracy magazynu.</li>
+                    </ul>
+
+                    <a href="https://www.insolutions.pl/pl/page/inwms">
+                        ZOBACZ PRODUKT →
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="produkt">
+
+                <img src="inMobilus_logo_RGB.svg" alt="Aplikacja inMobilus" class="kwadrat">
+
+                <div class="produkt-tresc">
+
+                    <h3>inMobilus – mobilna sprzedaż</h3>
+
+                    <p>
+                        Aplikacja mobilna dla przedstawicieli
+                        handlowych, pozwalająca na pracę
+                        z danymi sprzedażowymi w terenie.
+                    </p>
+
+                    <p>
+                        Rozwiązanie wspiera zbieranie zamówień
+                        przez handlowców oraz obsługę sprzedaży
+                        bezpośredniej.
+                    </p>
+
+                    <ul>
+                        <li>Obsługa przedstawicieli handlowych.</li>
+                        <li>Zbieranie zamówień.</li>
+                        <li>Obsługa dokumentów sprzedażowych.</li>
+                        <li>Integracja danych z centralą.</li>
+                    </ul>
+
+                    <a href="https://www.insolutions.pl/pl/inmobilus/o-aplikacji">
+                        ZOBACZ PRODUKT →
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="produkt">
+
+                <img src="inpos-logo.png" alt="Stanowisko sprzedaży inPOS" class="kwadrat">
+
+                <div class="produkt-tresc">
+
+                    <h3>inPOS – stanowisko sprzedaży</h3>
+
+                    <p>
+                        inPOS to rozwiązanie przeznaczone
+                        dla sieci handlowych i gastronomicznych,
+                        umożliwiające stworzenie kompletnego
+                        stanowiska sprzedaży.
+                    </p>
+
+                    <p>
+                        System wspiera obsługę klientów,
+                        urządzeń peryferyjnych i stanowisk
+                        sprzedażowych.
+                    </p>
+
+                    <ul>
+                        <li>Obsługa rachunków.</li>
+                        <li>Współpraca z drukarkami fiskalnymi.</li>
+                        <li>Obsługa terminali dotykowych.</li>
+                        <li>Możliwość pracy online i offline.</li>
+                    </ul>
+
+                    <a href="https://www.insolutions.pl/pl/page/inpos">
+                        ZOBACZ PRODUKT →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+<section class="wybrali-nas">
+
+    <div class="sekcja-naglowek">
+        <h2>Wybrali nas</h2>
+        <p style="color: white;">
+            Firmy, które zaufały naszym rozwiązaniom
+            i współpracują z inSolutions.
+        </p>
+    </div>
+
+    <div class="karuzela-klientow">
+
+        <div class="karuzela-tor">
+
+            <!-- LOGOTYPY FIRM -->
+            <img src="kolba.svg" alt="kolba">
+            <img src="klos.svg" alt="klos">
+            <img src="jbl.png" alt="jbl">
+            <img src="charlie-food-friends.png" alt="charlie-food-friends">
+            <img src="monnari.png" alt="Klient 5">
+            <img src="szmidt.svg" alt="szmidt">
+            <img src="3w.png" alt="3w">
+            <img src="8a_logo.png" alt="8a">
+            
+
+            <!-- POWTÓRZENIE DLA PŁYNNEJ ANIMACJI -->
+             <img src="kolba.svg" alt="kolba">
+            <img src="klos.svg" alt="klos">
+            <img src="jbl.png" alt="jbl">
+            <img src="charlie-food-friends.png" alt="charlie-food-friends">
+            <img src="monnari.png" alt="Klient 5">
+            <img src="szmidt.svg" alt="szmidt">
+            <img src="3w.png" alt="3w">
+            <img src="8a_logo.png" alt="8a">
+
+        </div>
+
+    </div>
+
+</section>
+
+    <section class="sekcja-obraz">
+
+        <img src="erp.png" alt="Integracja systemów ERP">
+
+        <div>
+
+            <h2>Integracje i rozwój systemów ERP</h2>
+
+            <p>
+        Odpowiednia integracja systemów informatycznych usprawnia przepływ danych pomiędzy działami przedsiębiorstwa. Systemy ERP stanowią centrum zarządzania firmą, dlatego ich współpraca z innymi aplikacjami ma kluczowe znaczenie dla sprawnego funkcjonowania biznesu.
+
+W InSolutions tworzymy i wdrażamy rozwiązania integrujące systemy ERP z zewnętrznym oprogramowaniem, platformami sprzedażowymi i aplikacjami biznesowymi. Zapewniamy sprawną wymianę danych, ograniczamy ręczne wprowadzanie informacji i pomagamy w pełni wykorzystać możliwości posiadanych systemów.
+
+Integracja systemów
+Sprawna wymiana danych między aplikacjami.
+
+Łączymy systemy informatyczne, zapewniając automatyczny przepływ informacji między sprzedażą, magazynem, logistyką i innymi działami. Integrujemy kartoteki produktów, dane kontrahentów, zamówienia, dokumenty oraz stany magazynowe.
+
+Rozwój systemów ERP
+Funkcjonalność dopasowana do potrzeb firmy.
+
+Rozwijamy istniejące oprogramowanie, tworząc dodatkowe moduły i dedykowane funkcjonalności. Dostosowujemy systemy do indywidualnych procesów biznesowych, bez konieczności wymiany całego środowiska IT.
+
+Automatyzacja procesów
+Mniej ręcznej pracy, większa efektywność.
+
+Automatyzujemy powtarzalne czynności i eliminujemy konieczność wielokrotnego wprowadzania tych samych danych. Usprawniamy obsługę zamówień, sprzedaży i magazynu, zapewniając szybki dostęp do aktualnych informacji.
+
+Co zyskuje Twoja firma?
+Automatyczną wymianę danych między systemami.
+
+Mniej błędów i ręcznego przepisywania informacji.
+
+Lepszą organizację procesów biznesowych.
+
+Nowe funkcjonalności w istniejącym oprogramowaniu.
+
+Efektywniejsze wykorzystanie systemów IT.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="korzysci">
+
+        <div class="sekcja-naglowek">
+
+            <h2>Co zyskuje Twoja firma?</h2>
+
+            <p>
+              Technologia powinna przynosić realne korzyści biznesowe. Odpowiednio dobrane i wdrożone oprogramowanie pozwala usprawnić codzienne funkcjonowanie przedsiębiorstwa, zoptymalizować procesy i lepiej wykorzystać dostępne zasoby. W InSolutions stawiamy na rozwiązania, które nie tylko odpowiadają na bieżące potrzeby, ale również wspierają dalszy rozwój firmy.
+            </p>
+
+        </div>
+
+        <div class="korzysci-grid">
+
+            <div class="korzysc">
+                <h3>Oszczędność czasu</h3>
+                <p>
+                    Automatyzacja wybranych procesów pozwala ograniczyć czas poświęcany na ręczne wprowadzanie danych, przygotowywanie dokumentów i wykonywanie rutynowych zadań. Dzięki integracji systemów informacje mogą być przekazywane automatycznie, a pracownicy mogą skupić się na ważniejszych obowiązkach.
+                </p>
+            </div>
+
+            <div class="korzysc">
+                <h3>Lepsza organizacja</h3>
+                <p>
+                   Odpowiednie oprogramowanie pomaga uporządkować obsługę sprzedaży, zamówień i gospodarki magazynowej. Integracja poszczególnych obszarów działalności zapewnia lepszą współpracę między działami, usprawnia obieg informacji i ułatwia codzienne zarządzanie przedsiębiorstwem.
+                </p>
+            </div>
+
+            <div class="korzysc">
+                <h3>Kontrola</h3>
+                <p>
+                    Spójne systemy informatyczne zapewniają łatwiejszy dostęp do danych dotyczących sprzedaży, klientów, produktów i stanów magazynowych. Pozwala to lepiej monitorować przebieg procesów, kontrolować zasoby i podejmować decyzje w oparciu o aktualne informacje.
+                </p>
+            </div>
+
+            <div class="korzysc">
+                <h3>Rozwój</h3>
+                <p>
+               Tworzymy i rozwijamy oprogramowanie z myślą o zmieniających się potrzebach przedsiębiorstw. Możliwość rozbudowy funkcjonalności, integracji z kolejnymi systemami i dostosowywania istniejących rozwiązań pozwala rozwijać środowisko informatyczne bez konieczności ciągłego rozpoczynania wszystkiego od nowa.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<section class="faq">
+
+    <div class="sekcja-naglowek">
+        <h2>Najczęściej zadawane pytania</h2>
+        <p>
+            Sprawdź odpowiedzi na pytania dotyczące
+            naszych rozwiązań.
+        </p>
+    </div>
+
+    <details>
+        <summary>Czym jest Subiekt nexo PRO?</summary>
+        <p>
+            To system wspierający sprzedaż,
+            gospodarkę magazynową i zarządzanie firmą.
+        </p>
+    </details>
+
+    <details>
+        <summary>Czy oferujecie wdrożenia?</summary>
+        <p>
+            Tak, oferujemy wsparcie przy wdrażaniu
+            i konfiguracji rozwiązań informatycznych.
+        </p>
+    </details>
+
+    <details>
+        <summary>Czy można zintegrować system z innymi aplikacjami?</summary>
+        <p>
+            Tak, oferujemy rozwiązania umożliwiające
+            integrację różnych systemów informatycznych.
+        </p>
+    </details>
+
+    <details>
+        <summary>Jak uzyskać wycenę?</summary>
+        <p>
+            Wystarczy przejść do zakładki Kontakt
+            i skontaktować się z naszą firmą.
+        </p>
+    </details>
+
+</section>
+
+<section class="cennik">
+
+    <div class="sekcja-naglowek">
+        <h2>Wycena rozwiązań</h2>
+        <p>
+            Każda firma ma inne potrzeby, dlatego
+            przygotowujemy indywidualne wyceny.
+        </p>
+    </div>
+
+    <div class="cennik-karta">
+        <h3>Oferta dopasowana do Twojej firmy</h3>
+
+        <p>
+            Cena zależy od wybranego oprogramowania,
+            zakresu wdrożenia oraz wymaganych integracji.
+        </p>
+
+        <p>
+            Skontaktuj się z nami, aby otrzymać
+            szczegółową wycenę.
+        </p>
+
+        <a href="kontakt.html" class="przycisk">
+            ZAPYTAJ O WYCENĘ
+        </a>
+    </div>
+
+</section>
+
+<section class="kontakt">
+
+    <h2>Nie wiesz, które rozwiązanie wybrać?</h2>
+
+    <p>
+        Skontaktuj się z nami. Pomożemy określić
+        potrzeby Twojej firmy i dobrać odpowiednie rozwiązanie.
+    </p>
+
+    <a href="kontakt.html"
+       class="przycisk">
+        SKONTAKTUJ SIĘ Z NAMI
+    </a>
+
+</section>
+
+<footer>
+
+    <div class="stopka">
+
+        <h3>inSolutions</h3>
+
+        <div class="sociale">
+
+            <a href="https://www.facebook.com/">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                     alt="Facebook">
+            </a>
+
+            <a href="https://www.youtube.com/channel/UCEssO0SpGFzzKYt2MYKY4gA">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+                     alt="YouTube">
+            </a>
+
+            <a href="https://www.linkedin.com/">
+                <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png"
+                     alt="LinkedIn">
+            </a>
+
+        </div>
+
+        <div class="linki-stopka">
+
+            <a href="polityka.html">Polityka prywatności</a>
+
+            <a href="prawo.html">Prawo autorskie</a>
+
+        </div>
+
+        <p>© 2026 inSolutions. Wszystkie prawa zastrzeżone.</p>
+
+    </div>
+
+</footer>
+<!-- Panel dostępności WCAG -->
+<div id="accessibility-panel" aria-label="Panel dostępności" role="region" style="position:fixed; top:50%; left:0; transform:translateY(-50%);
+  background:#17345b; padding:0.5em; border-radius:0 8px 8px 0; z-index:100000; display:flex; flex-direction:column; gap:0.4em;">
+
+  <button id="btn-sign-language" aria-label="Przełącz tłumaczenie na język migowy" aria-pressed="false" title="Tłumaczenie na język migowy"
+    style="background:transparent; color:white; border:none; cursor:pointer; width:48px; height:48px; font-size:22px; border-radius:4px; display:flex; justify-content:center; align-items:center;">
+    🧏‍♂️
+  </button>
+
+  <button id="btn-contrast" aria-label="Przełącz tryb wysokiego kontrastu" aria-pressed="false" title="Wysoki kontrast"
+    style="background:transparent; color:white; border:none; cursor:pointer; width:48px; height:48px; font-size:22px; border-radius:4px; display:flex; justify-content:center; align-items:center;">
+    ⚫
+  </button>
+
+  <button id="btn-zoom-in" aria-label="Powiększ stronę" title="Powiększ stronę"
+    style="background:transparent; color:white; border:none; cursor:pointer; width:48px; height:48px; font-weight:bold; font-size:20px; border-radius:4px;">
+    A+
+  </button>
+
+  <button id="btn-zoom-out" aria-label="Zmniejsz stronę" title="Zmniejsz stronę"
+    style="background:transparent; color:white; border:none; cursor:pointer; width:48px; height:48px; font-weight:bold; font-size:20px; border-radius:4px;">
+    A-
+  </button>
+
+  <button id="btn-reset" aria-label="Resetuj ustawienia dostępności" title="Resetuj"
+    style="background:transparent; color:white; border:none; cursor:pointer; width:48px; height:48px; font-size:18px; border-radius:4px;">
+    ↺
+  </button>
+</div>
+
+<!-- Panel tłumaczenia na język migowy -->
+<div id="sign-language-panel" role="region" aria-label="Tłumaczenie na język migowy" tabindex="-1"
+  style="display:none; position:fixed; bottom:0; left:60px; background:white; border:2px solid #17345b; z-index:100001; width:320px; height:240px; box-shadow:0 4px 15px rgba(0,0,0,0.3); border-radius:8px; padding:0.5em;">
+  <button id="btn-close-sign-language" class="close" aria-label="Zamknij tłumaczenie języka migowego"
+    style="position:absolute; top:4px; right:8px; background:transparent; border:none; font-size:20px; cursor:pointer; color:#17345b;">✖</button>
+  <video controls width="100%" height="100%">
+    <source src="twoj-film-migowy.mp4" type="video/mp4" />
+    Przeglądarka nie obsługuje odtwarzania video.
+  </video>
+</div>
+
+<script>
+  const btnSign = document.getElementById('btn-sign-language');
+  const btnContrast = document.getElementById('btn-contrast');
+  const btnZoomIn = document.getElementById('btn-zoom-in');
+  const btnZoomOut = document.getElementById('btn-zoom-out');
+  const btnReset = document.getElementById('btn-reset');
+  const signPanel = document.getElementById('sign-language-panel');
+  const btnCloseSL = document.getElementById('btn-close-sign-language');
+
+  btnSign.addEventListener('click', () => {
+    if (signPanel.style.display === 'block') {
+      signPanel.style.display = 'none';
+      btnSign.setAttribute('aria-pressed', 'false');
+    } else {
+      signPanel.style.display = 'block';
+      btnSign.setAttribute('aria-pressed', 'true');
+      signPanel.focus();
+    }
+  });
+
+  btnCloseSL.addEventListener('click', () => {
+    signPanel.style.display = 'none';
+    btnSign.setAttribute('aria-pressed', 'false');
+    btnSign.focus();
+  });
+
+  btnContrast.addEventListener('click', () => {
+    document.body.classList.toggle('high-contrast');
+    const pressed = document.body.classList.contains('high-contrast');
+    btnContrast.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+  });
+
+  btnZoomIn.addEventListener('click', () => {
+    document.body.classList.add('zoom-in');
+    document.body.classList.remove('zoom-out');
+  });
+
+  btnZoomOut.addEventListener('click', () => {
+    document.body.classList.add('zoom-out');
+    document.body.classList.remove('zoom-in');
+  });
+
+  btnReset.addEventListener('click', () => {
+    document.body.classList.remove('high-contrast', 'zoom-in', 'zoom-out');
+    btnContrast.setAttribute('aria-pressed', 'false');
+  });
+</script>
+
+<style>
+  /* Style dla trybów dostępności */
+  body.high-contrast {
+    background-color: black !important;
+    color: yellow !important;
+  }
+  
+  /* Dodanie obsługi wszystkich głównych elementów tekstowych */
+  body.high-contrast p,
+  body.high-contrast h1,
+  body.high-contrast h2,
+  body.high-contrast h3,
+  body.high-contrast h4,
+  body.high-contrast h5,
+  body.high-contrast h6,
+  body.high-contrast li,
+  body.high-contrast span,
+  body.high-contrast a,
+  body.high-contrast button {
+    color: yellow !important;
+  }
+
+  body.high-contrast a:hover,
+  body.high-contrast button:hover {
+    color: #ffea00 !important;
+  }
+
+  body.zoom-in {
+    zoom: 1.2;
+  }
+
+  body.zoom-out {
+    zoom: 0.8;
+  }
+.kwadrat {
+    background-color: black;
+    width: 100%;          /* Pozwól logo zająć pełną szerokość kontenera karty */
+    max-height: 810px;     /* Opcjonalnie: zabezpieczenie przed zbyt wysokimi obrazkami */
+    height: auto;         /* Zachowaj naturalne proporcje obrazka */
+    object-fit: contain;  /* Zapewni, że cały obrazek zmieści się w polu bez ucinania */
+    padding: 10px;        /* Dodatkowy odstęp od krawędzi, jeśli czarne tło ma obejmować margines */
+    box-sizing: border-box;
+  }
+</style>
+
+
+</script>
+
+<script>
+    
+var przyciski = document.querySelectorAll('.pokaz-wiecej');
+
+for (var i = 0; i < przyciski.length; i++) {
+    przyciski[i].onclick = function() {
+        var tekst = this.previousElementSibling;
+
+        tekst.classList.toggle('rozwiniety');
+
+        if (tekst.classList.contains('rozwiniety')) {
+            this.innerHTML = 'Pokaż mniej';
+        } else {
+            this.innerHTML = 'Pokaż więcej';
+        }
+    };
+}
+
+</script>
+
+
+<script>
+    
+document.addEventListener("DOMContentLoaded", () => {
+
+    // =====================================
+    // USTAWIENIA ANIMACJI
+    // =====================================
+
+    const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reduceMotion) return;
+
+
+    // =====================================
+    // ANIMACJE SEKCJI
+    // =====================================
+
+    const revealElements = document.querySelectorAll(
+        ".sekcja-naglowek, " +
+        ".informacja, " +
+        ".produkt, " +
+        ".korzysc, " +
+        ".kontakt"
+    );
+
+    // Dodajemy klasę animacji
+    revealElements.forEach(element => {
+        element.classList.add("scroll-reveal");
+    });
+
+
+    // =====================================
+    // ANIMACJE ZDJĘĆ
+    // =====================================
+
+    const images = document.querySelectorAll(
+        ".sekcja-obraz img, .produkt img"
+    );
+
+    images.forEach(image => {
+        image.classList.add("image-reveal");
+    });
+
+
+    // =====================================
+    // OBSERWATOR SCROLLOWANIA
+    // =====================================
+
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -35px 0px"
+            }
+        );
+
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        images.forEach(image => {
+            observer.observe(image);
+        });
+
+    } else {
+
+        revealElements.forEach(element => {
+            element.classList.add("visible");
+        });
+
+        images.forEach(image => {
+            image.classList.add("visible");
+        });
+
+    }
+
+
+    // =====================================
+    // OPÓŹNIENIE KART
+    // =====================================
+
+    const containers = document.querySelectorAll(
+        ".informacje, .produkty, .korzysci-grid"
+    );
+
+    containers.forEach(container => {
+
+        Array.from(container.children).forEach((card, index) => {
+
+            card.style.setProperty(
+                "--delay",
+                `${index * 150}ms`
+            );
+
+        });
+
+    });
+
+
+    // =====================================
+    // MENU
+    // =====================================
+
+    const menu = document.querySelector(".menu");
+
+    if (menu) {
+        menu.classList.add("menu-visible");
+    }
+
+
+    // =====================================
+    // NAGŁÓWEK
+    // =====================================
+
+    const naglowek = document.querySelector(".naglowek");
+
+    if (naglowek) {
+        naglowek.classList.add("header-visible");
+    }
+
+});
+
+</script>
+
+<!-- GOOGLE TRANSLATE -->
+
+<script>
+let translateReady = false;
+
+function googleTranslateInit() {
+
+    new google.translate.TranslateElement({
+        pageLanguage: 'pl',
+        includedLanguages: 'pl,en,de',
+        autoDisplay: false
+    }, 'google_translate_element');
+
+    translateReady = true;
+}
+
+function changeLanguage(language) {
+
+    if (!translateReady) {
+        alert("Tłumacz jeszcze się ładuje. Spróbuj za chwilę.");
+        return;
+    }
+
+    const select = document.querySelector(
+        '#google_translate_element select.goog-te-combo'
+    );
+
+    if (!select) {
+        alert("Nie udało się załadować tłumacza Google.");
+        return;
+    }
+
+    select.value = language;
+
+    select.dispatchEvent(
+        new Event('change', { bubbles: true })
+    );
+}
+</script>
+
+<script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateInit">
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const links = document.querySelectorAll(".menu nav a");
+
+    const currentPage = window.location.pathname
+        .split("/")
+        .pop() || "index.html";
+
+    links.forEach(link => {
+
+        const href = link.getAttribute("href");
+
+        if (!href || href.startsWith("http") || href.startsWith("#")) {
+            return;
+        }
+
+        const linkPage = href.split("#")[0];
+
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+            link.setAttribute("aria-current", "page");
+        }
+
+    });
+
+});
+</script>
+<script>
+    
+document.addEventListener("DOMContentLoaded", function () {
+
+    const input = document.getElementById("szukajInput");
+    const wynik = document.getElementById("wynikWyszukiwania");
+    const wyczysc = document.getElementById("wyczyscSzukaj");
+
+    // Elementy, które będą przeszukiwane
+    const elementy = document.querySelectorAll(
+        ".informacja, .produkt, .korzysc, .sekcja-obraz"
+    );
+
+    input.addEventListener("input", function () {
+
+        const fraza = input.value
+            .toLowerCase()
+            .trim()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+
+        let znalezione = 0;
+
+        elementy.forEach(element => {
+
+            const tekst = element.innerText
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "");
+
+            if (tekst.includes(fraza)) {
+
+                element.style.display = "";
+                znalezione++;
+
+            } else {
+
+                element.style.display = "none";
+
+            }
+
+        });
+
+        if (fraza === "") {
+
+            elementy.forEach(element => {
+                element.style.display = "";
+            });
+
+            wynik.textContent = "";
+
+        } else if (znalezione > 0) {
+
+            wynik.textContent =
+                "Znaleziono: " + znalezione + " wyników.";
+
+        } else {
+
+            wynik.textContent =
+                "Nie znaleziono wyników dla: " + input.value;
+
+        }
+
+    });
+
+    wyczysc.addEventListener("click", function () {
+
+        input.value = "";
+
+        elementy.forEach(element => {
+            element.style.display = "";
+        });
+
+        wynik.textContent = "";
+
+        input.focus();
+
+    });
+
+});
+
+</script>
+</body>
+</html>

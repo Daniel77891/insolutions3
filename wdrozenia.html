@@ -1,0 +1,2805 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Wdrożenia – inSolutions</title>
+
+    <link rel="stylesheet" href="nexo.css">
+
+</head>
+<style>
+    
+/* ==========================================
+   INSOLUTIONS – WDROŻENIA
+   NOWY ARKUSZ STYLÓW
+   CZĘŚĆ 1 – PODSTAWY I NAGŁÓWEK
+========================================== */
+
+/* KOLORY */
+
+:root {
+    --navy: #15365b;
+    --blue: #2878bd;
+    --light-blue: #eaf3fa;
+    --green: #64a83e;
+    --gray: #637184;
+    --white: #ffffff;
+    --border: #e1e8ef;
+    --shadow: 0 8px 28px rgba(21, 54, 91, 0.08);
+}
+
+/* RESET */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #26374b;
+    background: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
+
+
+/* NAGŁÓWEK */
+
+header {
+    width: 100%;
+    min-height: 570px;
+    color: white;
+background: linear-gradient(rgba(17, 41, 70, 0.75), rgba(17, 41, 70, 0.85)), url("baner3.jpeg") center/cover no-repeat;
+    position: relative;
+}
+
+/* MENU */
+
+.menu {
+    width: 100%;
+    max-width: 1250px;
+    min-height: 105px;
+    margin: auto;
+    padding: 20px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.menu > a {
+    flex-shrink: 0;
+}
+
+
+
+/* LINKI MENU */
+
+.menu nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.menu nav a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: .5px;
+    transition: color .3s ease;
+    white-space: nowrap;
+}
+
+/* NAJECHANIE */
+
+.menu nav a:hover {
+    color: #ffd700;
+}
+
+/* AKTYWNA PODSTRONA */
+
+.menu nav a.active {
+    color: #ffd700;
+}
+
+.menu nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    width: 100%;
+    height: 3px;
+    background: #ffd700;
+    border-radius: 3px;
+}
+
+/* PRZEŁĄCZNIK JĘZYKA */
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-shrink: 0;
+}
+
+.language-switcher button {
+    padding: 8px 11px;
+    color: white;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.6);
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.language-switcher button:hover {
+    color: white;
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+/* UKRYTY GOOGLE TRANSLATE */
+
+#google_translate_element {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* NAGŁÓWEK TEKSTOWY */
+
+.naglowek {
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+    padding: 105px 30px 100px;
+}
+
+.naglowek h1 {
+    max-width: 800px;
+    margin-bottom: 22px;
+    padding-left: 20px;
+    border-left: 5px solid var(--green);
+
+    color: white;
+    font-size: clamp(32px, 5vw, 54px);
+    line-height: 1.2;
+}
+
+.naglowek h3 {
+    margin-bottom: 18px;
+    color: #a9d2ff;
+    font-size: 23px;
+}
+
+.naglowek h5 {
+    max-width: 650px;
+    color: #e5edf5;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.8;
+}
+
+/* PRZYCISK GŁÓWNY */
+
+.przycisk {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 27px;
+
+    color: white;
+    background: var(--green);
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: .3s ease;
+}
+
+.przycisk:hover {
+    color: white;
+    background: #4c8e2d;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+}
+
+/* FOCUS – DOSTĘPNOŚĆ */
+
+.menu a:focus-visible,
+.menu button:focus-visible,
+.przycisk:focus-visible {
+    outline: 3px solid #ffd700;
+    outline-offset: 4px;
+}
+
+/* UKŁAD GŁÓWNY */
+
+main {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 65px 30px;
+}
+
+/* NAGŁÓWKI SEKCJI */
+
+.sekcja-naglowek {
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.sekcja-naglowek h2 {
+    margin-bottom: 12px;
+    color: var(--navy);
+    font-size: 32px;
+    line-height: 1.3;
+}
+
+.sekcja-naglowek p {
+    max-width: 850px;
+    margin: auto;
+    color: var(--gray);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* TABLETY */
+
+@media (max-width: 950px) {
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .menu nav {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .naglowek {
+        padding: 75px 25px 85px;
+    }
+}
+
+/* TELEFONY */
+
+@media (max-width: 600px) {
+
+    header {
+        min-height: auto;
+    }
+
+    .menu {
+        gap: 18px;
+    }
+
+    .menu nav {
+        gap: 15px;
+    }
+
+    .menu nav a {
+        font-size: 11px;
+    }
+
+    .language-switcher {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .naglowek {
+        padding: 55px 22px 70px;
+    }
+
+    .naglowek h1 {
+        font-size: 34px;
+    }
+
+    .naglowek h3 {
+        font-size: 19px;
+    }
+
+    .naglowek h5 {
+        font-size: 14px;
+    }
+
+    main {
+        padding: 40px 18px;
+    }
+
+    .sekcja-naglowek h2 {
+        font-size: 26px;
+    }
+}
+
+/* ==========================================
+   INSOLUTIONS – WDROŻENIA
+   CZĘŚĆ 2 – SEKCJE I KARTY
+========================================== */
+
+/* ==========================================
+   ETAPY WDROŻENIA
+========================================== */
+
+.etapy {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin: 45px 0 75px;
+}
+
+.etap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 28px 22px;
+
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-bottom: 4px solid var(--blue);
+    border-radius: 7px;
+
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.etap:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(21, 54, 91, .12);
+}
+
+.etap span {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--blue);
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.etap h3 {
+    margin-bottom: 12px;
+    color: var(--navy);
+    font-size: 19px;
+}
+
+.etap p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   SEKCJE ZE ZDJĘCIAMI
+========================================== */
+
+
+
+/* ==========================================
+   KORZYŚCI
+========================================== */
+
+.korzysci {
+    margin: 80px 0;
+    padding: 60px 40px;
+    background: var(--light-blue);
+    border-radius: 10px;
+}
+
+.korzysci .sekcja-naglowek {
+    margin-bottom: 35px;
+}
+
+.korzysci-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.korzysc {
+    height: 100%;
+    padding: 27px 22px;
+    background: #ffffff;
+    border: 1px solid #e1e8ef;
+    border-radius: 7px;
+    box-shadow: 0 4px 16px rgba(21, 54, 91, .05);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.korzysc:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(21, 54, 91, .10);
+}
+
+.korzysc h3 {
+    margin-bottom: 12px;
+    color: var(--blue);
+    font-size: 19px;
+}
+
+.korzysc p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   INFORMACJE – KARTY
+========================================== */
+
+.informacje {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin: 45px 0 80px;
+}
+
+.informacja {
+    padding: 25px 18px;
+    background: var(--light-blue);
+    border-bottom: 4px solid var(--blue);
+    border-radius: 6px;
+    text-align: center;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.informacja:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+.informacja h3 {
+    margin-bottom: 8px;
+    color: var(--navy);
+    font-size: 19px;
+}
+
+.informacja p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* ==========================================
+   PRODUKTY
+========================================== */
+
+.produkty {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin: 45px 0 80px;
+}
+
+.produkt {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.produkt:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(21, 54, 91, .12);
+}
+
+
+
+.produkt-tresc {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 25px;
+}
+
+.produkt h3 {
+    margin-bottom: 12px;
+    color: var(--navy);
+    font-size: 23px;
+}
+
+.produkt p {
+    margin-bottom: 15px;
+    color: var(--gray);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.produkt ul {
+    padding-left: 20px;
+    margin-bottom: 18px;
+    color: #4c5e71;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.produkt a {
+    margin-top: auto;
+    color: var(--blue);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+.produkt a:hover {
+    color: var(--green);
+}
+
+/* ==========================================
+   SEKCJE Z DŁUGIM TEKSTEM
+========================================== */
+
+.sekcja-obraz p strong {
+    color: var(--navy);
+}
+
+.sekcja-obraz a {
+    margin-top: 10px;
+}
+
+/* ==========================================
+   EFEKTY HOVER – URZĄDZENIA Z MYSZĄ
+========================================== */
+
+@media (hover: hover) {
+
+    .etap:hover,
+    .korzysc:hover,
+    .produkt:hover,
+    .informacja:hover {
+        cursor: default;
+    }
+
+}
+
+/* ==========================================
+   TABLETY
+========================================== */
+
+@media (max-width: 950px) {
+
+    .etapy {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .korzysci-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .informacje {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+ 
+
+   
+
+    .korzysci {
+        padding: 45px 25px;
+    }
+}
+
+/* ==========================================
+   TELEFONY
+========================================== */
+
+@media (max-width: 600px) {
+
+    .etapy {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 30px 0 50px;
+    }
+
+    .etap {
+        padding: 25px 20px;
+    }
+
+    .korzysci-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .informacje {
+        grid-template-columns: 1fr;
+        margin: 30px 0 50px;
+    }
+
+    .produkty {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+
+
+    .korzysci {
+        margin: 50px 0;
+        padding: 35px 18px;
+    }
+
+   
+
+    .produkt-tresc {
+        padding: 20px;
+    }
+}
+
+/* ==========================================
+   OGRANICZENIE ANIMACJI
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .etap,
+    .korzysc,
+    .produkt,
+    .informacja {
+        transition: none;
+    }
+
+    .etap:hover,
+    .korzysc:hover,
+    .produkt:hover,
+    .informacja:hover {
+        transform: none;
+    }
+}
+/* =========================================
+   INSOLUTIONS – KALKULATOR WDROŻENIA
+   CZĘŚĆ 3
+========================================= */
+
+/* GŁÓWNY KONTENER */
+
+.kontener {
+    max-width: 1100px;
+    margin: 70px auto;
+    padding: 0 25px;
+}
+
+.karta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    background: #ffffff;
+    border: 1px solid #e1e8ef;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 8px 35px rgba(21, 54, 91, 0.08);
+}
+
+/* NAGŁÓWKI */
+
+.formularz h2,
+.wynik h2 {
+    color: #15365b;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.opis {
+    color: #637184;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* SEKCJE FORMULARZA */
+
+.sekcja {
+    padding: 25px;
+    margin-bottom: 22px;
+    background: #f5f9fc;
+    border: 1px solid #e1eaf2;
+    border-radius: 9px;
+}
+
+.sekcja h3 {
+    color: #15365b;
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+
+/* POLA */
+
+.pole {
+    margin-bottom: 20px;
+}
+
+.pole:last-child {
+    margin-bottom: 0;
+}
+
+.pole label {
+    display: block;
+    color: #26374b;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.pole input,
+.pole select,
+.pole textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #d5e0ea;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #26374b;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    transition: .3s;
+}
+
+.pole input:focus,
+.pole select:focus,
+.pole textarea:focus {
+    outline: none;
+    border-color: #2878bd;
+    box-shadow: 0 0 0 3px rgba(40, 120, 189, .12);
+}
+
+.pole textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* WYBÓR INTEGRACJI */
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border: 1px solid #e1e8ef;
+    border-radius: 7px;
+    transition: .3s;
+}
+
+.checkbox:hover {
+    border-color: #2878bd;
+    background: #f8fbfe;
+}
+
+.checkbox input {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    accent-color: #2878bd;
+    cursor: pointer;
+}
+
+.checkbox label {
+    cursor: pointer;
+    color: #26374b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.cena-integracji {
+    display: block;
+    color: #637184;
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+/* INFORMACJA O CENACH */
+
+.info {
+    padding: 17px;
+    margin-top: 20px;
+    background: #eaf3fa;
+    border-left: 4px solid #2878bd;
+    border-radius: 5px;
+    color: #526579;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* PRZYCISK OBLICZANIA */
+
+.formularz > button {
+    width: 100%;
+    padding: 17px;
+    border: none;
+    border-radius: 6px;
+    background: #64a83e;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.formularz > button:hover {
+    background: #4c8e2d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 142, 45, .2);
+}
+
+/* WYNIK KALKULACJI */
+
+.wynik {
+    display: none;
+    padding: 30px;
+    background: #f5f9fc;
+    border: 1px solid #dce7f0;
+    border-radius: 9px;
+}
+
+.wynik h3 {
+    color: #15365b;
+    font-size: 17px;
+    margin: 25px 0 10px;
+}
+
+.wynik .cena {
+    color: #2878bd;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 12px 0;
+}
+
+#dataKalkulacji {
+    color: #637184;
+    font-size: 13px;
+}
+
+.szczegoly {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 7px;
+    border: 1px solid #e1e8ef;
+    color: #4c5e71;
+    line-height: 2;
+    font-size: 14px;
+}
+
+/* UWAGI */
+
+.uwaga {
+    padding: 17px;
+    margin-top: 25px;
+    background: #eaf3fa;
+    border-radius: 6px;
+    color: #637184;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* PRZYCISKI WYNIKU */
+
+.przyciski {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.przyciski button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.przycisk-pdf {
+    background: #2878bd;
+}
+
+.przycisk-email {
+    background: #64a83e;
+}
+
+.przyciski button:hover {
+    transform: translateY(-3px);
+    filter: brightness(.92);
+}
+
+/* RESPONSYWNOŚĆ */
+
+@media (max-width: 700px) {
+
+    .kontener {
+        margin: 35px auto;
+        padding: 0 15px;
+    }
+
+    .karta {
+        padding: 20px 15px;
+    }
+
+    .formularz h2,
+    .wynik h2 {
+        font-size: 25px;
+    }
+
+    .sekcja {
+        padding: 18px 14px;
+    }
+
+    .przyciski {
+        flex-direction: column;
+    }
+
+    .wynik {
+        padding: 20px 15px;
+    }
+
+    .wynik .cena {
+        font-size: 27px;
+    }
+}
+
+/* DRUKOWANIE KALKULACJI */
+
+@media print {
+
+    body * {
+        visibility: hidden;
+    }
+
+    #wynik,
+    #wynik * {
+        visibility: visible;
+    }
+
+    #wynik {
+        display: block !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+    }
+
+    .przyciski {
+        display: none;
+    }
+}
+/* =========================================
+   INSOLUTIONS – WDROŻENIA
+   CZĘŚĆ 4 – SPÓJNOŚĆ STRONY
+========================================= */
+
+/* ODSTĘPY MIĘDZY SEKCJAMI */
+
+main {
+    padding-top: 55px;
+    padding-bottom: 55px;
+}
+
+main section {
+    margin-bottom: 65px;
+}
+
+
+
+
+
+/* NAGŁÓWKI */
+
+.sekcja-naglowek h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.sekcja-naglowek p {
+    line-height: 1.8;
+}
+
+.sekcja-obraz h2 {
+    line-height: 1.3;
+}
+
+.sekcja-obraz p {
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* ETAPY WDROŻENIA */
+
+.etap {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(21, 54, 91, .05);
+}
+
+.etap:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(21, 54, 91, .10);
+}
+
+.etap span {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eaf3fa;
+    border-radius: 50%;
+}
+
+/* KORZYŚCI */
+
+.korzysci {
+    border-radius: 10px;
+}
+
+.korzysc {
+    border: 1px solid #e5edf4;
+    box-shadow: 0 3px 12px rgba(21, 54, 91, .04);
+}
+
+/* KALKULATOR – PRZEJŚCIE Z TREŚCI */
+
+.kontener {
+    margin-top: 45px;
+    margin-bottom: 75px;
+    position: relative;
+}
+
+.kontener::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #64a83e;
+    border-radius: 5px;
+    margin: 0 auto 35px;
+}
+
+/* KARTA KALKULATORA */
+
+.karta {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* KONTAKT */
+
+.kontakt {
+    margin-top: 60px;
+    padding: 65px 25px;
+}
+
+.kontakt h2 {
+    margin-bottom: 18px;
+}
+
+.kontakt .przycisk {
+    margin-top: 25px;
+}
+
+/* STOPKA */
+
+footer {
+    padding: 40px 25px;
+}
+
+.linki-stopka {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.linki-stopka a {
+    color: #d8e5f1;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.linki-stopka a:hover {
+    color: #ffd700;
+}
+
+/* TELEFONY */
+
+@media (max-width: 800px) {
+
+    .informacje,
+    .korzysci-grid,
+    .etapy {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sekcja-obraz {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+  
+
+    main section {
+        margin-bottom: 45px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .informacje,
+    .korzysci-grid,
+    .etapy {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 35px 18px;
+    }
+
+  
+
+    .korzysci {
+        padding: 35px 18px;
+    }
+
+    .sekcja-naglowek h2 {
+        font-size: 25px;
+    }
+
+    .kontakt h2 {
+        font-size: 25px;
+    }
+}
+
+/* PROCES WDROŻENIA */
+
+.proces-wdrozenia {
+    padding: 80px 8%;
+    background: #f4f7fb;
+}
+
+.proces-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    max-width: 1200px;
+    margin: 45px auto 0;
+}
+
+.proces-krok {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    border-bottom: 4px solid #17345b;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.proces-krok:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.proces-krok span {
+    display: block;
+    font-size: 35px;
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+.proces-krok h3 {
+    color: #17345b;
+    margin-bottom: 15px;
+}
+
+.proces-krok p {
+    color: #555;
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+    .proces-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .proces-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+</style>
+<body>
+<nav class="breadcrumbs" aria-label="Okruszki nawigacyjne">
+    <a href="index.html">Strona główna</a>
+    <span class="separator">›</span>
+    <span aria-current="page">Wdrożenia</span>
+</nav>
+<header>
+
+
+
+
+
+    <div class="menu">
+
+        <a href="index.html">
+            <img src="logo.svg" alt="inSolutions">
+        </a>
+
+      <nav>
+<a href="oferta.html">OFERTA</a>
+<a href="wdrozenia.html">WDROŻENIA</a>
+<a href="https://www.insklep.pl/">INSKLEP</a>
+<a href="kontakt.html">KONTAKT</a>
+
+
+<div class="language-switcher">
+    <button onclick="changeLanguage('pl')">PL 🇵🇱</button>
+    <button onclick="changeLanguage('en')">EN 🇬🇧</button>
+    <button onclick="changeLanguage('de')">DE 🇩🇪</button>
+</div>
+
+<div id="google_translate_element"></div>
+
+
+        </nav>
+
+    </div>
+
+    <div class="naglowek">
+
+        <h1 id="pierwsze">
+            Wdrożenia systemów informatycznych
+        </h1>
+
+        <h3>
+            Dobrze zaplanowane wdrożenie to sprawniejsza firma
+        </h3>
+
+        <h5>
+            Poznaj etapy współpracy i dowiedz się,
+            jak przygotować przedsiębiorstwo do pracy
+            z nowoczesnym oprogramowaniem.
+        </h5>
+
+        <a href="kontakt.html"
+           class="przycisk">
+            UMÓW KONSULTACJĘ
+        </a>
+
+    </div>
+
+</header>
+
+
+<section class="wyszukiwarka">
+    <div class="wyszukiwarka-kontener">
+
+        <h2>Jakiego rozwiązania szukasz?</h2>
+
+        <p>
+            Wpisz nazwę produktu lub interesującą Cię funkcjonalność.
+        </p>
+
+        <div class="szukaj-box">
+            <span class="szukaj-ikona">🔍</span>
+
+            <input
+                type="text"
+                id="szukajInput"
+                placeholder="Np. magazyn, sprzedaż, inWMS..."
+                aria-label="Wyszukaj produkty i rozwiązania"
+            >
+
+            <button type="button" id="wyczyscSzukaj">
+                WYCZYŚĆ
+            </button>
+        </div>
+
+        <p id="wynikWyszukiwania" aria-live="polite"></p>
+
+    </div>
+</section>
+
+
+<main>
+
+    <section>
+
+        <div class="sekcja-naglowek">
+
+            <h2>Jak wygląda proces wdrożenia?</h2>
+
+            <p>
+                Każde przedsiębiorstwo ma inną strukturę, potrzeby i sposób organizacji pracy. Dlatego w InSolutions do każdego projektu podchodzimy indywidualnie, dbając o odpowiednie dopasowanie rozwiązań do specyfiki działalności firmy. Proces wdrożenia realizujemy etapowo, koncentrując się na poznaniu oczekiwań, właściwym przygotowaniu systemu i sprawnym uruchomieniu go w codziennej pracy.
+            </p>
+
+        </div>
+
+        <div class="etapy">
+
+            <div class="etap">
+
+                <span>01</span>
+
+                <h3>Konsultacja</h3>
+
+                <p>
+                    Pierwszym krokiem jest rozmowa, podczas której poznajemy specyfikę działalności przedsiębiorstwa, jego strukturę oraz najważniejsze wyzwania. Ustalamy cele wdrożenia, oczekiwania użytkowników i obszary, które wymagają usprawnienia. Pozwala nam to określić kierunek dalszych działań i wstępnie dobrać odpowiednie rozwiązania.
+                </p>
+
+            </div>
+
+            <div class="etap">
+
+                <span>02</span>
+
+                <h3>Analiza</h3>
+
+                <p>
+                    Dokładnie analizujemy aktualne procesy biznesowe, wykorzystywane oprogramowanie oraz wymagania techniczne i funkcjonalne. Identyfikujemy możliwości usprawnienia pracy, potrzebę integracji z innymi systemami oraz zakres niezbędnych zmian. Na tej podstawie określamy założenia i plan realizacji wdrożenia.
+                </p>
+
+            </div>
+
+            <div class="etap">
+
+                <span>03</span>
+
+                <h3>Konfiguracja</h3>
+
+                <p>
+                   Przygotowujemy środowisko informatyczne i konfigurujemy uzgodnione funkcjonalności. W razie potrzeby realizujemy dodatkowe modyfikacje, tworzymy dedykowane rozwiązania oraz integrujemy system z wykorzystywanym już oprogramowaniem. Dbamy o to, aby przygotowane rozwiązanie odpowiadało założeniom projektu i było gotowe do wykorzystania w praktyce.
+                </p>
+
+            </div>
+
+            <div class="etap">
+
+                <span>04</span>
+
+                <h3>Uruchomienie</h3>
+
+                <p>
+                   Po zakończeniu przygotowań przechodzimy do uruchomienia systemu. Wspieramy użytkowników w rozpoczęciu pracy, pomagamy rozwiązywać pojawiające się problemy i wyjaśniamy najważniejsze funkcjonalności. Zapewniamy również możliwość dalszych konsultacji, pomocy technicznej i rozwoju wdrożonego rozwiązania
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="sekcja-obraz">
+
+        <img src="wdrozenia.png"
+             alt="Wdrożenie oprogramowania w firmie">
+
+        <div>
+
+            <h2>Wdrożenie dopasowane do przedsiębiorstwa</h2>
+<p>
+         Wdrożenie oprogramowania to znacznie więcej niż instalacja i konfiguracja systemu. Kluczowe znaczenie ma poznanie specyfiki przedsiębiorstwa, sposobu organizacji pracy oraz procesów, które mają być obsługiwane przez nowe rozwiązanie. W InSolutions skupiamy się na dostarczaniu narzędzi dopasowanych do rzeczywistych potrzeb firmy, uwzględniając zarówno jej aktualne wymagania, jak i plany dalszego rozwoju.
+</p>
+<p>
+Analiza potrzeb i procesów
+Pierwszym etapem jest poznanie sposobu funkcjonowania przedsiębiorstwa. Analizujemy wykorzystywane systemy, organizację pracy oraz oczekiwania osób, które będą korzystać z oprogramowania. Pozwala nam to określić najważniejsze wymagania, zidentyfikować obszary wymagające usprawnienia i dobrać funkcjonalności, które przyniosą największe korzyści.
+</p>
+<p>
+Dopasowanie rozwiązania
+Na podstawie przeprowadzonej analizy przygotowujemy rozwiązanie odpowiadające specyfice działalności firmy. Konfigurujemy dostępne funkcjonalności, dostosowujemy oprogramowanie do ustalonych wymagań i w razie potrzeby realizujemy dodatkowe modyfikacje oraz integracje z innymi systemami. Dbamy o to, aby nowe narzędzia dobrze wpisywały się w istniejące procesy biznesowe.
+</p>
+<p>
+Przygotowanie użytkowników
+Równie ważnym elementem wdrożenia jest przygotowanie pracowników do korzystania z nowych narzędzi. Pomagamy poznać funkcjonalności systemu, wyjaśniamy zasady jego obsługi i wspieramy użytkowników w rozpoczęciu codziennej pracy. Dzięki temu przejście na nowe rozwiązanie jest bardziej uporządkowane, a pracownicy mogą szybciej wykorzystać jego możliwości.
+</p>
+<p>
+Rozwiązanie na lata
+Projektujemy wdrożenia z myślą o długoterminowym wykorzystaniu. Uwzględniamy możliwość rozbudowy funkcjonalności, integracji z kolejnymi systemami i dostosowywania oprogramowania do zmieniających się potrzeb przedsiębiorstwa.
+</p>
+        </div>
+
+    </section>
+
+    <section class="korzysci">
+
+        <div class="sekcja-naglowek">
+
+            <h2>Na co zwracamy uwagę?</h2>
+
+            <p>
+                W InSolutions wiemy, że samo dostarczenie oprogramowania nie gwarantuje usprawnienia pracy firmy. Kluczowe znaczenie ma odpowiednie dopasowanie systemu do istniejących procesów, organizacji pracy i oczekiwań użytkowników. Dlatego na każdym etapie wdrożenia zwracamy uwagę na aspekty, które mają bezpośredni wpływ na funkcjonalność i efektywność wdrażanego rozwiązania.
+            </p>
+
+        </div>
+
+        <div class="korzysci-grid">
+
+            <div class="korzysc">
+                <h3>Potrzeby firmy</h3>
+                <p>
+                  Poznajemy specyfikę działalności przedsiębiorstwa i analizujemy jego najważniejsze potrzeby. Na tej podstawie dobieramy funkcjonalności, które wspierają codzienne zadania, usprawniają realizację procesów i pomagają rozwiązywać konkretne problemy biznesowe.
+                </p>
+            </div>
+
+            <div class="korzysc">
+                <h3>Organizacja pracy</h3>
+                <p>
+                    Uwzględniamy strukturę organizacyjną firmy, podział obowiązków oraz przebieg najważniejszych procesów. Dbamy o odpowiednią konfigurację oprogramowania i jego integrację z wykorzystywanymi narzędziami, aby zapewnić sprawną wymianę informacji i wygodną obsługę systemu.
+                </p>
+            </div>
+
+            <div class="korzysc">
+                <h3>Pracownicy</h3>
+                <p>
+                    Zwracamy uwagę na potrzeby osób, które będą korzystać z wdrażanego oprogramowania. Pomagamy przygotować użytkowników do pracy z nowymi narzędziami, wyjaśniamy dostępne funkcjonalności i wspieramy ich w poznawaniu systemu. Zależy nam, aby nowe rozwiązanie było praktyczne i intuicyjne w codziennym użytkowaniu.
+                </p>
+            </div>
+
+            <div class="korzysc">
+                <h3>Wsparcie</h3>
+                <p>
+                    Zapewniamy wsparcie podczas wdrożenia oraz w trakcie późniejszego użytkowania oprogramowania. Pomagamy rozwiązywać problemy, odpowiadamy na pytania i doradzamy w zakresie wykorzystania dostępnych funkcjonalności. Wspieramy również rozwój wdrożonych rozwiązań, gdy zmieniają się potrzeby przedsiębiorstwa.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="sekcja-obraz">
+
+        <div>
+
+            <h2>Rozwijaj możliwości swojego systemu</h2>
+
+          <p>
+            Wraz z rozwojem przedsiębiorstwa zmieniają się jego potrzeby, procesy i wymagania dotyczące wykorzystywanych narzędzi informatycznych. Pojawiają się nowe kanały sprzedaży, dodatkowe zadania magazynowe, potrzeba integracji kolejnych systemów czy usprawnienia obsługi klientów. Dotychczasowe rozwiązania nie zawsze odpowiadają na wszystkie nowe wyzwania.
+</p>
+<p><p>
+W InSolutions pomagamy rozwijać i rozbudowywać istniejące oprogramowanie, dostosowując jego funkcjonalności do zmieniających się potrzeb biznesowych. Tworzymy dodatkowe moduły, wdrażamy nowe rozwiązania i integrujemy systemy, pozwalając w pełni wykorzystać możliwości posiadanej infrastruktury informatycznej.
+</p><p>
+Dzięki temu nie musisz rezygnować ze sprawdzonych narzędzi i wymieniać całego systemu. Możesz stopniowo rozszerzać jego możliwości, usprawniać kolejne obszary działalności i dostosowywać oprogramowanie do aktualnych wymagań przedsiębiorstwa.
+</p><p>
+Rozbudowa funkcjonalności – nowe moduły i możliwości dopasowane do potrzeb firmy.
+</p><p>
+Integracja systemów – połączenie wykorzystywanego oprogramowania z dodatkowymi aplikacjami i usługami.
+</p><p>
+Automatyzacja procesów – ograniczenie powtarzalnych czynności i usprawnienie codziennej pracy.
+</p><p>
+Dalszy rozwój – elastyczne dostosowywanie rozwiązań do zmieniającej się skali działalności.
+          </p>
+
+            <a href="oferta.html" class="przycisk">
+                POZNAJ NASZE ROZWIĄZANIA
+            </a>
+
+        </div>
+
+        <img src="magazyn.webp"
+             alt="Nowoczesne zarządzanie magazynem">
+
+    </section>
+
+</main>
+
+<section class="proces-wdrozenia">
+
+    <div class="sekcja-naglowek">
+        <h2>Jak wygląda proces wdrożenia?</h2>
+        <p>
+            Przeprowadzamy klientów przez kolejne etapy
+            wdrażania rozwiązań informatycznych.
+        </p>
+    </div>
+
+    <div class="proces-grid">
+
+        <article class="proces-krok">
+            <span>01</span>
+            <h3>Analiza potrzeb</h3>
+            <p>
+                Poznajemy wymagania i specyfikę
+                działalności przedsiębiorstwa.
+            </p>
+        </article>
+
+        <article class="proces-krok">
+            <span>02</span>
+            <h3>Dobór rozwiązania</h3>
+            <p>
+                Wybieramy odpowiednie oprogramowanie
+                i zakres jego funkcjonalności.
+            </p>
+        </article>
+
+        <article class="proces-krok">
+            <span>03</span>
+            <h3>Wdrożenie</h3>
+            <p>
+                Instalujemy, konfigurujemy i dostosowujemy
+                rozwiązanie do potrzeb firmy.
+            </p>
+        </article>
+
+        <article class="proces-krok">
+            <span>04</span>
+            <h3>Wsparcie</h3>
+            <p>
+                Pomagamy w rozpoczęciu pracy
+                i dalszym korzystaniu z systemu.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<div class="kontener">
+<h2>OBLICZ KOSZT WDROŻENIA ZA POMOCĄ KALKULATORA</h2>
+<div class="karta">
+
+<div class="formularz">
+
+<h2>Konfigurator wdrożenia</h2>
+
+<p class="opis">
+Wybierz zakres wdrożenia Subiekt nexo PRO,
+liczbę użytkowników oraz dodatkowe rozwiązania.
+Sprawdź orientacyjny koszt współpracy z inSolutions.
+</p>
+
+
+<!-- 1. UŻYTKOWNICY -->
+
+<div class="sekcja">
+
+<h3>1. Użytkownicy i stanowiska</h3>
+
+<div class="pole">
+
+<label for="osoby">Liczba użytkowników</label>
+
+<input type="number" id="osoby" min="1" max="500" value="1">
+
+</div>
+
+<div class="pole">
+
+<label for="stanowiska">Dodatkowe stanowiska pracy</label>
+
+<input type="number" id="stanowiska" min="0" max="500" value="0">
+
+</div>
+
+</div>
+
+
+<!-- 2. WDROŻENIE -->
+
+<div class="sekcja">
+
+<h3>2. Rodzaj wdrożenia</h3>
+
+<div class="pole">
+
+<label for="wdrozenie">Wybierz zakres wdrożenia</label>
+
+<select id="wdrozenie">
+
+<option value="1000">Podstawowe – 1000 zł</option>
+
+<option value="3000">Standardowe – 3000 zł</option>
+
+<option value="5000">Zaawansowane – 5000 zł</option>
+
+</select>
+
+</div>
+
+<div class="pole">
+
+<label for="szkolenie">Szkolenie pracowników</label>
+
+<select id="szkolenie">
+
+<option value="0">Bez szkolenia – 0 zł</option>
+
+<option value="1000">Szkolenie – 1000 zł</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<!-- 3. INTEGRACJE -->
+
+<div class="sekcja">
+
+<h3>3. Rozwiązania i integracje inSolutions</h3>
+
+<p class="opis">
+Wybierz rozwiązania, które chcesz wykorzystać
+w swojej firmie.
+</p>
+
+
+<h3>inTradus</h3>
+
+<div class="checkbox">
+
+<input type="radio" name="tradus" id="tradus0" value="0" checked>
+
+<label for="tradus0">
+Nie wybieram inTradus
+</label>
+
+</div>
+
+<div class="checkbox">
+
+<input type="radio" name="tradus" id="tradus1" value="299">
+
+<label for="tradus1">
+inTradus START B2B
+
+<span class="cena-integracji">
+Od 299 zł netto / miesiąc
+</span>
+
+</label>
+
+</div>
+
+<div class="checkbox">
+
+<input type="radio" name="tradus" id="tradus2" value="399">
+
+<label for="tradus2">
+inTradus START B2B + sklep internetowy
+
+<span class="cena-integracji">
+Od 399 zł netto / miesiąc
+</span>
+
+</label>
+
+</div>
+
+
+<h3>Inne rozwiązania</h3>
+
+<div class="checkbox">
+
+<input type="checkbox" id="mobilus">
+
+<label for="mobilus">
+inMobilus – aplikacja dla przedstawicieli handlowych
+
+<span class="cena-integracji">
+Wycena indywidualna
+</span>
+
+</label>
+
+</div>
+
+<div class="checkbox">
+
+<input type="checkbox" id="wms">
+
+<label for="wms">
+inWMS – zarządzanie magazynem
+
+<span class="cena-integracji">
+Wycena indywidualna
+</span>
+
+</label>
+
+</div>
+
+
+<div class="checkbox">
+
+<input type="checkbox" id="inne">
+
+<label for="inne">
+Inne integracje i rozwiązania
+
+<span class="cena-integracji">
+Wycena indywidualna
+</span>
+
+</label>
+
+</div>
+
+<div class="info">
+
+Ceny inTradus są orientacyjnymi cenami abonamentowymi
+netto. Pozostałe rozwiązania wymagają indywidualnej
+wyceny. Koszt licencji Subiekt nexo PRO nie jest
+uwzględniony w kalkulacji.
+
+</div>
+
+</div>
+
+
+<!-- 4. DANE KLIENTA -->
+
+<div class="sekcja">
+
+<h3>4. Dane kontaktowe</h3>
+
+<div class="pole">
+
+<label for="firma">Nazwa firmy</label>
+
+<input type="text" id="firma" placeholder="Nazwa firmy">
+
+</div>
+
+<div class="pole">
+
+<label for="imie">Imię i nazwisko</label>
+
+<input type="text" id="imie" placeholder="Osoba kontaktowa">
+
+</div>
+
+<div class="pole">
+
+<label for="email">Adres e-mail</label>
+
+<input type="email" id="email" placeholder="adres@firma.pl">
+
+</div>
+
+<div class="pole">
+
+<label for="telefon">Telefon</label>
+
+<input type="text" id="telefon" placeholder="Numer telefonu">
+
+</div>
+
+<div class="pole">
+
+<label for="uwagi">Dodatkowe informacje</label>
+
+<textarea id="uwagi" placeholder="Opisz potrzeby firmy, oczekiwane funkcje, obecne systemy i dodatkowe wymagania..."></textarea>
+
+</div>
+
+</div>
+
+
+<button onclick="oblicz()">
+OBLICZ KOSZT WDROŻENIA
+</button>
+
+</div>
+
+
+<!-- WYNIK -->
+
+<div class="wynik" id="wynik">
+
+<h2>Twoja kalkulacja</h2>
+
+<p id="dataKalkulacji"></p>
+
+<h3>Jednorazowy koszt wdrożenia</h3>
+
+<div class="cena" id="cena">0 zł</div>
+
+<h3>Szczegółowe zestawienie</h3>
+
+<div class="szczegoly" id="szczegoly"></div>
+
+<h3>Abonament miesięczny</h3>
+
+<div class="cena" id="abonament">0 zł</div>
+
+<div class="uwaga">
+
+Podana kwota ma charakter orientacyjny i nie stanowi
+oferty handlowej. Ostateczna wycena zależy od zakresu
+wdrożenia oraz indywidualnych potrzeb firmy.
+
+Ceny abonamentowe i wdrożeniowe mogą wymagać
+potwierdzenia przez inSolutions.
+
+</div>
+
+<div class="przyciski">
+
+<button class="przycisk-pdf" onclick="zapiszPDF()">
+POBIERZ KALKULACJĘ PDF
+</button>
+
+<button class="przycisk-email" onclick="wyslijEmail()">
+WYŚLIJ KALKULACJĘ DO IN SOLUTIONS
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- Panel dostępności WCAG -->
+<div id="accessibility-panel" aria-label="Panel dostępności" role="region" style="position:fixed; top:50%; left:0; transform:translateY(-50%);
+  background:#17345b; padding:0.5em; border-radius:0 8px 8px 0; z-index:100000; display:flex; flex-direction:column; gap:0.4em;">
+
+<button id="btn-sign-language" aria-label="Przełącz tłumaczenie na język migowy" aria-pressed="false" title="Tłumaczenie na język migowy"
+    style="background:transparent; color:white; border:none; cursor:pointer; width:48px; height:48px; font-size:22px; border-radius:4px; display:flex; justify-content:center; align-items:center;">
+    🧏‍♂️
+  </button>
+
+  <button id="btn-contrast" aria-label="Przełącz tryb wysokiego kontrastu" aria-pressed="false" title="Wysoki kontrast"
+    style="background:transparent; color:white; border:none; cursor:pointer; width:48px; height:48px; font-size:22px; border-radius:4px; display:flex; justify-content:center; align-items:center;">
+    ⚫
+  </button>
+
+  <button id="btn-zoom-in" aria-label="Powiększ stronę" title="Powiększ stronę"
+    style="background:transparent; color:white; border:none; cursor:pointer; width:48px; height:48px; font-weight:bold; font-size:20px; border-radius:4px;">
+    A+
+  </button>
+
+  <button id="btn-zoom-out" aria-label="Zmniejsz stronę" title="Zmniejsz stronę"
+    style="background:transparent; color:white; border:none; cursor:pointer; width:48px; height:48px; font-weight:bold; font-size:20px; border-radius:4px;">
+    A-
+  </button>
+
+  <button id="btn-reset" aria-label="Resetuj ustawienia dostępności" title="Resetuj"
+    style="background:transparent; color:white; border:none; cursor:pointer; width:48px; height:48px; font-size:18px; border-radius:4px;">
+    ↺
+  </button>
+</div>
+
+<!-- Panel tłumaczenia na język migowy -->
+<div id="sign-language-panel" role="region" aria-label="Tłumaczenie na język migowy" tabindex="-1"
+  style="display:none; position:fixed; bottom:0; left:60px; background:white; border:2px solid #17345b; z-index:100001; width:320px; height:240px; box-shadow:0 4px 15px rgba(0,0,0,0.3); border-radius:8px; padding:0.5em;">
+  <button id="btn-close-sign-language" class="close" aria-label="Zamknij tłumaczenie języka migowego"
+    style="position:absolute; top:4px; right:8px; background:transparent; border:none; font-size:20px; cursor:pointer; color:#17345b;">✖</button>
+  <video controls width="100%" height="100%">
+    <source src="twoj-film-migowy.mp4" type="video/mp4" />
+    Przeglądarka nie obsługuje odtwarzania video.
+  </video>
+</div>
+
+<!-- Przycisk powrotu na górę -->
+<button id="backToTop" title="Wróć na górę" aria-label="Wróć na górę">
+  ↑
+</button>
+
+<style>
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: #e5a900;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+#backToTop:hover {
+  background: #bd8b00;
+  transform: translateY(-5px);
+}
+</style>
+
+<script>
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function() {
+  if (window.scrollY > 300) {
+    backToTop.style.display = "block";
+  } else {
+    backToTop.style.display = "none";
+  }
+});
+
+backToTop.addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+</script>
+
+<script>
+  const btnSign = document.getElementById('btn-sign-language');
+  const btnContrast = document.getElementById('btn-contrast');
+  const btnZoomIn = document.getElementById('btn-zoom-in');
+  const btnZoomOut = document.getElementById('btn-zoom-out');
+  const btnReset = document.getElementById('btn-reset');
+  const signPanel = document.getElementById('sign-language-panel');
+  const btnCloseSL = document.getElementById('btn-close-sign-language');
+
+  btnSign.addEventListener('click', () => {
+    if (signPanel.style.display === 'block') {
+      signPanel.style.display = 'none';
+      btnSign.setAttribute('aria-pressed', 'false');
+    } else {
+      signPanel.style.display = 'block';
+      btnSign.setAttribute('aria-pressed', 'true');
+      signPanel.focus();
+    }
+  });
+
+  btnCloseSL.addEventListener('click', () => {
+    signPanel.style.display = 'none';
+    btnSign.setAttribute('aria-pressed', 'false');
+    btnSign.focus();
+  });
+
+  btnContrast.addEventListener('click', () => {
+    document.body.classList.toggle('high-contrast');
+    const pressed = document.body.classList.contains('high-contrast');
+    btnContrast.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+  });
+
+  btnZoomIn.addEventListener('click', () => {
+    document.body.classList.add('zoom-in');
+    document.body.classList.remove('zoom-out');
+  });
+
+  btnZoomOut.addEventListener('click', () => {
+    document.body.classList.add('zoom-out');
+    document.body.classList.remove('zoom-in');
+  });
+
+  btnReset.addEventListener('click', () => {
+    document.body.classList.remove('high-contrast', 'zoom-in', 'zoom-out');
+    btnContrast.setAttribute('aria-pressed', 'false');
+  });
+</script>
+
+<style>
+  /* Style dla trybów dostępności */
+  body.high-contrast {
+    background-color: black !important;
+    color: yellow !important;
+  }
+  
+  /* Dodanie obsługi wszystkich głównych elementów tekstowych */
+  body.high-contrast p,
+  body.high-contrast h1,
+  body.high-contrast h2,
+  body.high-contrast h3,
+  body.high-contrast h4,
+  body.high-contrast h5,
+  body.high-contrast h6,
+  body.high-contrast li,
+  body.high-contrast span,
+  body.high-contrast a,
+  body.high-contrast button {
+    color: yellow !important;
+  }
+
+  body.high-contrast a:hover,
+  body.high-contrast button:hover {
+    color: #ffea00 !important;
+  }
+
+  body.zoom-in {
+    zoom: 1.2;
+  }
+
+  body.zoom-out {
+    zoom: 0.8;
+  }
+</style>
+
+
+</script>
+
+<script>
+
+// ADRES E-MAIL FIRMY
+
+const EMAIL_FIRMY = "grzesikdaniel182@gmail.com";
+
+let ostatniaKalkulacja = 0;
+
+
+// FUNKCJA OBLICZAJĄCA KOSZT
+
+function oblicz() {
+
+    let osoby = Number(document.getElementById("osoby").value);
+
+    let stanowiska = Number(document.getElementById("stanowiska").value);
+
+    let wdrozenie = Number(document.getElementById("wdrozenie").value);
+
+    let szkolenie = Number(document.getElementById("szkolenie").value);
+
+
+    // SPRAWDZENIE DANYCH
+
+    if (
+        osoby < 1 || osoby > 500 ||
+        stanowiska < 0 || stanowiska > 500 ||
+        osoby % 1 != 0 ||
+        stanowiska % 1 != 0
+    ) {
+
+        alert("Wprowadź prawidłowe dane!");
+
+        return;
+
+    }
+
+
+    // OBLICZANIE KOSZTÓW
+
+    let kosztOsob = osoby * 100;
+
+    let kosztStanowisk = stanowiska * 200;
+
+    let koszt = wdrozenie + szkolenie +
+                kosztOsob + kosztStanowisk;
+
+
+    // ABONAMENT INTRADUS
+
+    let abonament = 0;
+
+    if (document.getElementById("tradus1").checked) {
+        abonament = 299;
+    }
+
+    if (document.getElementById("tradus2").checked) {
+        abonament = 399;
+    }
+
+
+    // WYBRANE INTEGRACJE
+
+    let wybrane = "";
+
+    if (document.getElementById("mobilus").checked) {
+        wybrane += "inMobilus, ";
+    }
+
+    if (document.getElementById("wms").checked) {
+        wybrane += "inWMS, ";
+    }
+
+    if (document.getElementById("inne").checked) {
+        wybrane += "Inne integracje, ";
+    }
+
+    if (wybrane == "") {
+        wybrane = "Brak";
+    }
+
+
+    // NAZWA INTRADUS
+
+    let nazwaTradus = "Nie wybrano";
+
+    if (document.getElementById("tradus1").checked) {
+        nazwaTradus = "inTradus START B2B";
+    }
+
+    if (document.getElementById("tradus2").checked) {
+        nazwaTradus = "inTradus START B2B + sklep internetowy";
+    }
+
+
+    // ZAPISANIE WYNIKU
+
+    ostatniaKalkulacja = koszt;
+
+
+    // WYŚWIETLENIE CENY
+
+    document.getElementById("cena").innerHTML =
+        koszt.toLocaleString("pl-PL") + " zł netto";
+
+
+    document.getElementById("abonament").innerHTML =
+        abonament + " zł netto / miesiąc";
+
+
+    // SZCZEGÓŁY
+
+    document.getElementById("szczegoly").innerHTML =
+
+        "Liczba użytkowników: " + osoby +
+
+        "<br>Koszt użytkowników: " + kosztOsob + " zł" +
+
+        "<br>Dodatkowe stanowiska: " + stanowiska +
+
+        "<br>Koszt stanowisk: " + kosztStanowisk + " zł" +
+
+        "<br>Wdrożenie: " + wdrozenie + " zł" +
+
+        "<br>Szkolenie: " + szkolenie + " zł" +
+
+        "<br>inTradus: " + nazwaTradus +
+
+        "<br>Wybrane integracje: " + wybrane;
+
+
+    // DATA
+
+    document.getElementById("dataKalkulacji").innerHTML =
+        "Data kalkulacji: " + new Date().toLocaleDateString("pl-PL");
+
+
+    // POKAZANIE WYNIKU
+
+    document.getElementById("wynik").style.display = "block";
+
+    document.getElementById("wynik").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+// FUNKCJA PRZYGOTOWUJĄCA TREŚĆ E-MAILA
+
+function pobierzOpis() {
+
+    let firma = document.getElementById("firma").value;
+
+    let imie = document.getElementById("imie").value;
+
+    let email = document.getElementById("email").value;
+
+    let telefon = document.getElementById("telefon").value;
+
+    let uwagi = document.getElementById("uwagi").value;
+
+
+    let opis =
+
+        "KALKULACJA WDROŻENIA INSOLUTIONS\n\n" +
+
+        "Firma: " + firma + "\n" +
+
+        "Osoba kontaktowa: " + imie + "\n" +
+
+        "E-mail: " + email + "\n" +
+
+        "Telefon: " + telefon + "\n\n" +
+
+        "Jednorazowy koszt wdrożenia: " +
+        ostatniaKalkulacja + " zł netto\n\n" +
+
+        "Abonament inTradus: " +
+        document.getElementById("abonament").innerText + "\n\n" +
+
+        "Szczegóły:\n" +
+        document.getElementById("szczegoly").innerText + "\n\n" +
+
+        "Dodatkowe informacje:\n" + uwagi;
+
+
+    return opis;
+
+}
+
+
+// ZAPIS DO PDF
+
+function zapiszPDF() {
+
+    if (ostatniaKalkulacja == 0) {
+
+        alert("Najpierw oblicz koszt wdrożenia!");
+
+        return;
+
+    }
+
+    window.print();
+
+}
+
+
+// WYSYŁANIE E-MAILA
+
+function wyslijEmail() {
+
+    if (ostatniaKalkulacja == 0) {
+
+        alert("Najpierw oblicz koszt wdrożenia!");
+
+        return;
+
+    }
+
+    let email = document.getElementById("email").value;
+
+    if (email == "" || email.indexOf("@") == -1) {
+
+        alert("Wpisz prawidłowy adres e-mail!");
+
+        return;
+
+    }
+
+    if (EMAIL_FIRMY == "") {
+
+        alert("Najpierw wpisz adres e-mail firmy w kodzie strony!");
+
+        return;
+
+    }
+
+    let temat = "Kalkulacja wdrożenia Subiekt nexo PRO";
+
+    let tresc = pobierzOpis();
+
+    window.location.href =
+
+        "mailto:" + EMAIL_FIRMY +
+
+        "?subject=" + encodeURIComponent(temat) +
+
+        "&body=" + encodeURIComponent(tresc);
+
+}
+
+</script>
+<!-- GOOGLE TRANSLATE -->
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const links = document.querySelectorAll(".menu nav a");
+
+    const currentPage = window.location.pathname
+        .split("/")
+        .pop() || "index.html";
+
+    links.forEach(link => {
+
+        const href = link.getAttribute("href");
+
+        if (!href || href.startsWith("http") || href.startsWith("#")) {
+            return;
+        }
+
+        const linkPage = href.split("#")[0];
+
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+            link.setAttribute("aria-current", "page");
+        }
+
+    });
+
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="kontakt">
+
+    <h2>Planujesz wdrożenie?</h2>
+
+    <p>
+        Skontaktuj się z nami i porozmawiajmy
+        o potrzebach Twojej firmy.
+    </p>
+
+    <a href="kontakt.html"
+       class="przycisk">
+        PRZEJDŹ DO KONTAKTU
+    </a>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+
+    <div class="stopka">
+
+        <h3>inSolutions</h3>
+
+        <div class="sociale">
+
+            <a href="https://www.facebook.com/">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                     alt="Facebook">
+            </a>
+
+            <a href="https://www.youtube.com/channel/UCEssO0SpGFzzKYt2MYKY4gA">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+                     alt="YouTube">
+            </a>
+
+            <a href="https://www.linkedin.com/">
+                <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png"
+                     alt="LinkedIn">
+            </a>
+
+        </div>
+
+        <div class="linki-stopka">
+
+            <a href="polityka.html">Polityka prywatności</a>
+
+            <a href="prawo.html">Prawo autorskie</a>
+
+        </div>
+
+        <p>© 2026 inSolutions. Wszystkie prawa zastrzeżone.</p>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+    
+document.addEventListener("DOMContentLoaded", () => {
+
+    // =====================================
+    // USTAWIENIA ANIMACJI
+    // =====================================
+
+    const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reduceMotion) return;
+
+
+    // =====================================
+    // ANIMACJE SEKCJI
+    // =====================================
+
+    const revealElements = document.querySelectorAll(
+        ".sekcja-naglowek, " +
+        ".informacja, " +
+        ".produkt, " +
+        ".korzysc, " +
+        ".kontakt"
+    );
+
+    // Dodajemy klasę animacji
+    revealElements.forEach(element => {
+        element.classList.add("scroll-reveal");
+    });
+
+
+    // =====================================
+    // ANIMACJE ZDJĘĆ
+    // =====================================
+
+    const images = document.querySelectorAll(
+        ".sekcja-obraz img, .produkt img"
+    );
+
+    images.forEach(image => {
+        image.classList.add("image-reveal");
+    });
+
+
+    // =====================================
+    // OBSERWATOR SCROLLOWANIA
+    // =====================================
+
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -35px 0px"
+            }
+        );
+
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        images.forEach(image => {
+            observer.observe(image);
+        });
+
+    } else {
+
+        revealElements.forEach(element => {
+            element.classList.add("visible");
+        });
+
+        images.forEach(image => {
+            image.classList.add("visible");
+        });
+
+    }
+
+
+    // =====================================
+    // OPÓŹNIENIE KART
+    // =====================================
+
+    const containers = document.querySelectorAll(
+        ".informacje, .produkty, .korzysci-grid"
+    );
+
+    containers.forEach(container => {
+
+        Array.from(container.children).forEach((card, index) => {
+
+            card.style.setProperty(
+                "--delay",
+                `${index * 150}ms`
+            );
+
+        });
+
+    });
+
+
+    // =====================================
+    // MENU
+    // =====================================
+
+    const menu = document.querySelector(".menu");
+
+    if (menu) {
+        menu.classList.add("menu-visible");
+    }
+
+
+    // =====================================
+    // NAGŁÓWEK
+    // =====================================
+
+    const naglowek = document.querySelector(".naglowek");
+
+    if (naglowek) {
+        naglowek.classList.add("header-visible");
+    }
+
+});
+
+</script>
+<!-- GOOGLE TRANSLATE -->
+
+<script>
+let translateReady = false;
+
+function googleTranslateInit() {
+
+    new google.translate.TranslateElement({
+        pageLanguage: 'pl',
+        includedLanguages: 'pl,en,de',
+        autoDisplay: false
+    }, 'google_translate_element');
+
+    translateReady = true;
+}
+
+function changeLanguage(language) {
+
+    if (!translateReady) {
+        alert("Tłumacz jeszcze się ładuje. Spróbuj za chwilę.");
+        return;
+    }
+
+    const select = document.querySelector(
+        '#google_translate_element select.goog-te-combo'
+    );
+
+    if (!select) {
+        alert("Nie udało się załadować tłumacza Google.");
+        return;
+    }
+
+    select.value = language;
+
+    select.dispatchEvent(
+        new Event('change', { bubbles: true })
+    );
+}
+</script>
+
+<script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateInit">
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const links = document.querySelectorAll(".menu nav a");
+
+    const currentPage = window.location.pathname
+        .split("/")
+        .pop() || "index.html";
+
+    links.forEach(link => {
+
+        const href = link.getAttribute("href");
+
+        if (!href || href.startsWith("http") || href.startsWith("#")) {
+            return;
+        }
+
+        const linkPage = href.split("#")[0];
+
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+            link.setAttribute("aria-current", "page");
+        }
+
+    });
+
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const input = document.getElementById("szukajInput");
+    const wynik = document.getElementById("wynikWyszukiwania");
+    const wyczysc = document.getElementById("wyczyscSzukaj");
+
+    // Główne sekcje strony przeznaczone do wyszukiwania
+    const elementy = document.querySelectorAll(
+        "main > section, .proces-wdrozenia, .kontener, .kontakt"
+    );
+
+    function normalizuj(tekst) {
+        return tekst
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .trim();
+    }
+
+    input.addEventListener("input", function () {
+
+        const fraza = normalizuj(input.value);
+        let znalezione = 0;
+
+        elementy.forEach(element => {
+
+            if (fraza === "") {
+                element.style.display = "";
+                return;
+            }
+
+            const tekst = normalizuj(element.innerText);
+
+            if (tekst.includes(fraza)) {
+
+                element.style.display = "";
+                znalezione++;
+
+            } else {
+
+                element.style.display = "none";
+
+            }
+
+        });
+
+        if (fraza === "") {
+
+            wynik.textContent = "";
+
+        } else if (znalezione > 0) {
+
+            wynik.textContent =
+                "Znaleziono " + znalezione + " pasujących sekcji.";
+
+        } else {
+
+            wynik.textContent =
+                "Nie znaleziono wyników dla: " + input.value;
+
+        }
+
+    });
+
+    wyczysc.addEventListener("click", function () {
+
+        input.value = "";
+
+        elementy.forEach(element => {
+            element.style.display = "";
+        });
+
+        wynik.textContent = "";
+        input.focus();
+
+    });
+
+});
+
+
+</script>
+
+
+</body>
+</html>
