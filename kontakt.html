@@ -712,7 +712,142 @@
     <p>© <span id="year"></span> inSolutions. Wszelkie prawa zastrzeżone.</p>
     <a href="prawo.html">Polityka prywatności</a>
 </footer>
+<!-- Panel dostępności WCAG -->
+<div id="accessibility-panel" aria-label="Panel dostępności" role="region" style="position:fixed; top:50%; left:0; transform:translateY(-50%);
+  background:#17345b; padding:0.5em; border-radius:0 8px 8px 0; z-index:100000; display:flex; flex-direction:column; gap:0.4em;">
 
+  <button id="btn-sign-language" aria-label="Przełącz tłumaczenie na język migowy" aria-pressed="false" title="Tłumaczenie na język migowy"
+    style="background:transparent; color:white; border:none; cursor:pointer; width:48px; height:48px; font-size:22px; border-radius:4px; display:flex; justify-content:center; align-items:center;">
+    🧏‍♂️
+  </button>
+
+  <button id="btn-contrast" aria-label="Przełącz tryb wysokiego kontrastu" aria-pressed="false" title="Wysoki kontrast"
+    style="background:transparent; color:white; border:none; cursor:pointer; width:48px; height:48px; font-size:22px; border-radius:4px; display:flex; justify-content:center; align-items:center;">
+    ⚫
+  </button>
+
+  <button id="btn-zoom-in" aria-label="Powiększ stronę" title="Powiększ stronę"
+    style="background:transparent; color:white; border:none; cursor:pointer; width:48px; height:48px; font-weight:bold; font-size:20px; border-radius:4px;">
+    A+
+  </button>
+
+  <button id="btn-zoom-out" aria-label="Zmniejsz stronę" title="Zmniejsz stronę"
+    style="background:transparent; color:white; border:none; cursor:pointer; width:48px; height:48px; font-weight:bold; font-size:20px; border-radius:4px;">
+    A-
+  </button>
+
+  <button id="btn-reset" aria-label="Resetuj ustawienia dostępności" title="Resetuj"
+    style="background:transparent; color:white; border:none; cursor:pointer; width:48px; height:48px; font-size:18px; border-radius:4px;">
+    ↺
+  </button>
+</div>
+
+<!-- Panel tłumaczenia na język migowy -->
+<div id="sign-language-panel" role="region" aria-label="Tłumaczenie na język migowy" tabindex="-1"
+  style="display:none; position:fixed; bottom:0; left:60px; background:white; border:2px solid #17345b; z-index:100001; width:320px; height:240px; box-shadow:0 4px 15px rgba(0,0,0,0.3); border-radius:8px; padding:0.5em;">
+  <button id="btn-close-sign-language" class="close" aria-label="Zamknij tłumaczenie języka migowego"
+    style="position:absolute; top:4px; right:8px; background:transparent; border:none; font-size:20px; cursor:pointer; color:#17345b;">✖</button>
+  <video controls width="100%" height="100%">
+    <source src="twoj-film-migowy.mp4" type="video/mp4" />
+    Przeglądarka nie obsługuje odtwarzania video.
+  </video>
+</div>
+
+<script>
+  const btnSign = document.getElementById('btn-sign-language');
+  const btnContrast = document.getElementById('btn-contrast');
+  const btnZoomIn = document.getElementById('btn-zoom-in');
+  const btnZoomOut = document.getElementById('btn-zoom-out');
+  const btnReset = document.getElementById('btn-reset');
+  const signPanel = document.getElementById('sign-language-panel');
+  const btnCloseSL = document.getElementById('btn-close-sign-language');
+
+  btnSign.addEventListener('click', () => {
+    if (signPanel.style.display === 'block') {
+      signPanel.style.display = 'none';
+      btnSign.setAttribute('aria-pressed', 'false');
+    } else {
+      signPanel.style.display = 'block';
+      btnSign.setAttribute('aria-pressed', 'true');
+      signPanel.focus();
+    }
+  });
+
+  btnCloseSL.addEventListener('click', () => {
+    signPanel.style.display = 'none';
+    btnSign.setAttribute('aria-pressed', 'false');
+    btnSign.focus();
+  });
+
+  btnContrast.addEventListener('click', () => {
+    document.body.classList.toggle('high-contrast');
+    const pressed = document.body.classList.contains('high-contrast');
+    btnContrast.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+  });
+
+  btnZoomIn.addEventListener('click', () => {
+    document.body.classList.add('zoom-in');
+    document.body.classList.remove('zoom-out');
+  });
+
+  btnZoomOut.addEventListener('click', () => {
+    document.body.classList.add('zoom-out');
+    document.body.classList.remove('zoom-in');
+  });
+
+  btnReset.addEventListener('click', () => {
+    document.body.classList.remove('high-contrast', 'zoom-in', 'zoom-out');
+    btnContrast.setAttribute('aria-pressed', 'false');
+  });
+</script>
+
+<style>
+  /* Style dla trybów dostępności */
+  body.high-contrast {
+    background-color: black !important;
+    color: yellow !important;
+  }
+  
+  /* Dodanie obsługi wszystkich głównych elementów tekstowych */
+  body.high-contrast p,
+  body.high-contrast h1,
+  body.high-contrast h2,
+  body.high-contrast h3,
+  body.high-contrast h4,
+  body.high-contrast h5,
+  body.high-contrast h6,
+  body.high-contrast li,
+  body.high-contrast span,
+  body.high-contrast a,
+  body.high-contrast button {
+    color: yellow !important;
+  }
+
+  body.high-contrast a:hover,
+  body.high-contrast button:hover {
+    color: #ffea00 !important;
+  }
+
+  body.zoom-in {
+    zoom: 1.2;
+  }
+
+  body.zoom-out {
+    zoom: 0.8;
+  }
+.kwadrat {
+    background-color: black;
+    width: 100%;          /* Pozwól logo zająć pełną szerokość kontenera karty */
+    max-height: 810px;     /* Opcjonalnie: zabezpieczenie przed zbyt wysokimi obrazkami */
+    height: auto;         /* Zachowaj naturalne proporcje obrazka */
+    object-fit: contain;  /* Zapewni, że cały obrazek zmieści się w polu bez ucinania */
+    padding: 10px;        /* Dodatkowy odstęp od krawędzi, jeśli czarne tło ma obejmować margines */
+    box-sizing: border-box;
+  }
+</style>
+
+
+</script>
 <!-- UKRYTY ELEMENT TŁUMACZA GOOGLE -->
 <div id="google_translate_element"></div>
 
@@ -1089,61 +1224,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 </head>
 <body>
 
-<!-- Panel dostępności WCAG -->
-<div id="accessibility-panel" aria-label="Panel dostępności" role="region">
-
-  <button id="btn-contrast" aria-label="Przełącz tryb wysokiego kontrastu" aria-pressed="false" title="Wysoki kontrast">⚫</button>
-  <button id="btn-zoom-in" aria-label="Powiększ stronę" title="Powiększ stronę">A+</button>
-  <button id="btn-zoom-out" aria-label="Zmniejsz stronę" title="Zmniejsz stronę">A-</button>
-  <button id="btn-reset" aria-label="Resetuj ustawienia dostępności" title="Resetuj">↺</button>
-</div>
-<!-- Panel tłumaczenia języka migowego -->
-<div id="sign-language-panel" role="region" aria-label="Tłumaczenie na język migowy" tabindex="-1">
-  <button id="btn-close-sign-language" class="close" aria-label="Zamknij tłumaczenie języka migowego">✖</button>
- 
 
 
-<script>
-  const btnSign = document.getElementById('btn-sign-language');
-  const btnContrast = document.getElementById('btn-contrast');
-  const btnZoomIn = document.getElementById('btn-zoom-in');
-  const btnZoomOut = document.getElementById('btn-zoom-out');
-  const btnReset = document.getElementById('btn-reset');
-  const signPanel = document.getElementById('sign-language-panel');
-  const btnCloseSL = document.getElementById('btn-close-sign-language');
-  btnSign.addEventListener('click', () => {
-    if (signPanel.style.display === 'block') {
-      signPanel.style.display = 'none';
-      btnSign.setAttribute('aria-pressed', 'false');
-    } else {
-      signPanel.style.display = 'block';
-      btnSign.setAttribute('aria-pressed', 'true');
-      signPanel.focus();
-    }
-  });
-  btnCloseSL.addEventListener('click', () => {
-    signPanel.style.display = 'none';
-    btnSign.setAttribute('aria-pressed', 'false');
-    btnSign.focus();
-  });
-  btnContrast.addEventListener('click', () => {
-    document.body.classList.toggle('high-contrast');
-    const pressed = document.body.classList.contains('high-contrast');
-    btnContrast.setAttribute('aria-pressed', pressed ? 'true' : 'false');
-  });
-  btnZoomIn.addEventListener('click', () => {
-    document.body.classList.add('zoom-in');
-    document.body.classList.remove('zoom-out');
-  });
-  btnZoomOut.addEventListener('click', () => {
-    document.body.classList.add('zoom-out');
-    document.body.classList.remove('zoom-in');
-  });
-  btnReset.addEventListener('click', () => {
-    document.body.classList.remove('high-contrast', 'zoom-in', 'zoom-out');
-    btnContrast.setAttribute('aria-pressed', 'false');
-  });
-</script>
+
+
+
 <script>
     
 
